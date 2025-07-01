@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,22 +13,20 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              {/* <div className="w-8 h-8 bg-[#32e4b6] rounded-full flex items-center justify-center mr-3">
-                <div className="w-4 h-4 border-2 border-black rounded-full"></div>
-              </div> */}
-              {/* <span className="text-white text-xl font-bold">HASHED</span> */}
-              <img src='/images/hashedIcon.svg' className="hashed-icon"/>
+              <Link to="/">
+                <img src='/images/hashedIcon.svg' className="hashed-icon"/>
+              </Link>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#home" className="text-white hover:text-[#32e4b6] transition-colors">HOME</a>
-              <a href="#about" className="text-white hover:text-[#32e4b6] transition-colors">ABOUT</a>
-              <a href="#products" className="text-white hover:text-[#32e4b6] transition-colors">PRODUCTS</a>
-              <a href="#projects" className="text-white hover:text-[#32e4b6] transition-colors">PROJECTS</a>
-              <a href="#contact" className="text-white hover:text-[#32e4b6] transition-colors">CONTACT</a>
+              <Link to="/" className="nav-link text-white">HOME</Link>
+              <a href="#about" className="nav-link text-white">ABOUT</a>
+              <a href="#products" className="nav-link text-white">PRODUCTS</a>
+              <Link to="/projects" className="nav-link text-white">PROJECTS</Link>
+              <a href="#contact" className="nav-link text-white">CONTACT</a>
             </div>
           </div>
 
@@ -46,10 +45,10 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-sm">
-              <a href="#home" className="block text-white hover:text-[#32e4b6] transition-colors py-2">HOME</a>
+              <Link to="/" className="block text-white hover:text-[#32e4b6] transition-colors py-2">HOME</Link>
               <a href="#about" className="block text-white hover:text-[#32e4b6] transition-colors py-2">ABOUT</a>
               <a href="#products" className="block text-white hover:text-[#32e4b6] transition-colors py-2">PRODUCTS</a>
-              <a href="#projects" className="block text-white hover:text-[#32e4b6] transition-colors py-2">PROJECTS</a>
+              <Link to="/projects" className="block text-white hover:text-[#32e4b6] transition-colors py-2">PROJECTS</Link>
               <a href="#contact" className="block text-white hover:text-[#32e4b6] transition-colors py-2">CONTACT</a>
             </div>
           </div>

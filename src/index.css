@@ -59,6 +59,26 @@
   .card-dark {
     @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg;
   }
+
+  .nav-link {
+    @apply relative transition-all duration-300 hover:text-[#32e4b6];
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #32e4b6;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
 }
 
 .hashed-icon {

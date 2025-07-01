@@ -63,19 +63,13 @@ const ProjectsSection = () => {
             const y = useTransform(
               scrollYProgress,
               [0, 1],
-              [0, -(index * 100)]
+              [0, -(index * 120)]
             );
             
             const scale = useTransform(
               scrollYProgress,
               [index * 0.25, (index + 1) * 0.25],
-              [1, 0.95]
-            );
-
-            const opacity = useTransform(
-              scrollYProgress,
-              [index * 0.25, (index + 1) * 0.25],
-              [1, 0.8]
+              [1, 0.9]
             );
 
             return (
@@ -84,8 +78,7 @@ const ProjectsSection = () => {
                 style={{ 
                   y: index === 0 ? 0 : y,
                   scale,
-                  opacity,
-                  zIndex: index + 1
+                  zIndex: projects.length - index
                 }}
                 className="sticky top-24 mb-8"
               >

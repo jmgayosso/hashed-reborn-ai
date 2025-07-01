@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="bg-black border-t border-[#2a2a2a] py-12">
@@ -13,11 +15,11 @@ const Footer = () => {
           
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
             <nav className="flex space-x-8">
-              <a href="#home" className="text-gray-300 hover:text-[#32e4b6] transition-colors">Home</a>
-              <a href="#about" className="text-gray-300 hover:text-[#32e4b6] transition-colors">About</a>
-              <a href="#products" className="text-gray-300 hover:text-[#32e4b6] transition-colors">Products</a>
-              <a href="#projects" className="text-gray-300 hover:text-[#32e4b6] transition-colors">Projects</a>
-              <a href="#contact" className="text-gray-300 hover:text-[#32e4b6] transition-colors">Contact</a>
+              <Link to="/" className="nav-link text-gray-300">Home</Link>
+              <a href="#about" className="nav-link text-gray-300">About</a>
+              <a href="#products" className="nav-link text-gray-300">Products</a>
+              <Link to="/projects" className="nav-link text-gray-300">Projects</Link>
+              <a href="#contact" className="nav-link text-gray-300">Contact</a>
             </nav>
           </div>
         </div>
