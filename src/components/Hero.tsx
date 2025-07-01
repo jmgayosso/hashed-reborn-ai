@@ -10,7 +10,7 @@ const Hero = () => {
             SOLVE OLD PROBLEMS
             <br />
             <span className="accent-text">NEW WAYS</span>
-            <span className="text-[#1DD1A1] ml-4">✨</span>
+            <span className="text-[#32e4b6] ml-4">✨</span>
           </h1>
           
           <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">

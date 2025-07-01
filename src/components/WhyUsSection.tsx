@@ -30,8 +30,8 @@ const WhyUsSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="card-dark p-8 hover:bg-[#222] transition-colors">
-              <div className="w-16 h-16 bg-[#1DD1A1]/10 rounded-full flex items-center justify-center mb-6">
-                <div className="text-[#1DD1A1]">
+              <div className="w-16 h-16 bg-[#32e4b6]/10 rounded-full flex items-center justify-center mb-6">
+                <div className="text-[#32e4b6]">
                   {feature.icon}
                 </div>
               </div>

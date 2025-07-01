@@ -27,7 +27,7 @@ const ProjectsSection = () => {
             <p className="text-gray-300 text-lg mb-6">
               Making sense of chaos with AI
             </p>
-            <button className="inline-flex items-center gap-2 text-[#1DD1A1] hover:text-[#16B896] transition-colors mb-6">
+            <button className="inline-flex items-center gap-2 text-[#32e4b6] hover:text-[#16B896] transition-colors mb-6">
               VIEW DETAILS
               <ArrowRight size={16} />
             </button>

@@ -34,7 +34,7 @@ const ExecutionSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="card-dark p-8">
-              <div className="text-[#1DD1A1] text-4xl mb-6">"</div>
+              <div className="text-[#32e4b6] text-4xl mb-6">"</div>
               <p className="text-white mb-8 leading-relaxed">
                 {testimonial.quote}
               </p>

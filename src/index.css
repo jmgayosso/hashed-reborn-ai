@@ -49,14 +49,18 @@
 
 @layer components {
   .accent-text {
-    @apply text-[#1DD1A1];
+    @apply text-[#32e4b6];
   }
   
   .btn-primary {
-    @apply bg-[#1DD1A1] text-black px-6 py-3 rounded-full font-medium hover:bg-[#16B896] transition-colors;
+    @apply bg-[#32e4b6] text-black px-6 py-3 rounded-full font-medium hover:bg-[#16B896] transition-colors;
   }
   
   .card-dark {
     @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg;
   }
+}
+
+.hashed-icon {
+  width: 100px !important;
 }
