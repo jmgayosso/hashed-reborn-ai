@@ -11,14 +11,15 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   const clients = [
-    { name: "BitCash", logo: "$", image: "/api/placeholder/120/60" },
-    { name: "PRXY", logo: "PRXY", image: "/api/placeholder/120/60" },
-    { name: "Citi", logo: "citi", image: "/api/placeholder/120/60" },
-    { name: "SPS Commerce", logo: "SPS", image: "/api/placeholder/120/60" },
-    { name: "Hypho", logo: "Hypho", image: "/api/placeholder/120/60" },
-    { name: "Credit Suisse", logo: "CS", image: "/api/placeholder/120/60" },
-    { name: "Diamond Standard", logo: "◊", image: "/api/placeholder/120/60" },
-    { name: "Snowflake", logo: "❄", image: "/api/placeholder/120/60" }
+    { name: "BitCash", logo: "$", image: "/images/clients/bitcash.svg" },
+    { name: "PRXY", logo: "PRXY", image: "/images/clients/citi.svg" },
+    { name: "Citi", logo: "citi", image: "/images/clients/credit.svg" },
+    { name: "SPS Commerce", logo: "SPS", image: "/images/clients/diamon.svg" },
+    { name: "Hypho", logo: "Hypho", image: "/images/clients/hancock.svg" },
+    { name: "Credit Suisse", logo: "CS", image: "/images/clients/hypha.svg" },
+    { name: "Diamond Standard", logo: "◊", image: "/images/clients/prxy.svg" },
+    { name: "Snowflake", logo: "❄", image: "/images/clients/seeds.svg" }
+    // { name: "Microsoft", logo: "MS", image: "/images/clients/un.svg" }
   ];
 
   return (

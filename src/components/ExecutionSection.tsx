@@ -84,7 +84,10 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Quote Icon */}
-                <div className="text-[#32e4b6] text-6xl font-bold mb-6 leading-none">"</div>
+                {/* <div className="text-[#32e4b6] text-6xl font-bold mb-6 leading-none">"</div> */}
+                <div className="flex justify-center mb-6">
+                  <img src='/images/icons/quotes.svg' style={{ maxWidth: '45px' }} />
+                </div>
                 
                 {/* Quote Text */}
                 <p className="text-white text-lg mb-12 leading-relaxed">

@@ -14,18 +14,15 @@ interface ClientsSectionProps {
 
 const ClientsSection = ({ clients: propClients }: ClientsSectionProps) => {
   const defaultClients: Client[] = [
-    { name: "BitCash", logo: "$", image: "/api/placeholder/120/60" },
-    { name: "PRXY", logo: "PRXY", image: "/api/placeholder/120/60" },
-    { name: "Citi", logo: "citi", image: "/api/placeholder/120/60" },
-    { name: "SPS Commerce", logo: "SPS", image: "/api/placeholder/120/60" },
-    { name: "Hypho", logo: "Hypho", image: "/api/placeholder/120/60" },
-    { name: "Credit Suisse", logo: "CS", image: "/api/placeholder/120/60" },
-    { name: "Diamond Standard", logo: "◊", image: "/api/placeholder/120/60" },
-    { name: "Snowflake", logo: "❄", image: "/api/placeholder/120/60" },
-    { name: "Microsoft", logo: "MS", image: "/api/placeholder/120/60" },
-    { name: "Google", logo: "G", image: "/api/placeholder/120/60" },
-    { name: "Amazon", logo: "A", image: "/api/placeholder/120/60" },
-    { name: "Meta", logo: "M", image: "/api/placeholder/120/60" }
+    { name: "BitCash", logo: "$", image: "/images/clients/bitcash" },
+    { name: "PRXY", logo: "PRXY", image: "/images/clients/citi" },
+    { name: "Citi", logo: "citi", image: "/images/clients/credit" },
+    { name: "SPS Commerce", logo: "SPS", image: "/images/clients/diamon" },
+    { name: "Hypho", logo: "Hypho", image: "/images/clients/hancock" },
+    { name: "Credit Suisse", logo: "CS", image: "/images/clients/hypha" },
+    { name: "Diamond Standard", logo: "◊", image: "/images/clients/prxy" },
+    { name: "Snowflake", logo: "❄", image: "/images/clients/seeds" },
+    { name: "Microsoft", logo: "MS", image: "/images/clients/un" }
   ];
 
   const clients = propClients || defaultClients;
@@ -50,14 +47,11 @@ const ClientsSection = ({ clients: propClients }: ClientsSectionProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#32e4b6] mb-4">
             Clients.
           </h2>
-          <p className="text-gray-400 text-lg">
-            Empresas que confían en nosotros
-          </p>
         </motion.div>
         
         <div className="relative">
@@ -88,16 +82,18 @@ const ClientsSection = ({ clients: propClients }: ClientsSectionProps) => {
                       <img 
                         src={client.image} 
                         alt={client.name}
-                        className="w-16 h-8 object-contain mb-2 filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                        className="w-100 object-contain mb-2 filter grayscale invert group-hover:grayscale-0 group-hover:invert-0 transition-all duration-300"
+                        style={{ filter: 'grayscale(1) invert(1)' }}
+                        loading='lazy'
                       />
                     ) : (
                       <div className="text-2xl font-bold text-white/60 group-hover:text-white/80 transition-colors mb-2">
                         {client.logo}
                       </div>
                     )}
-                    <div className="text-sm text-gray-400 group-hover:text-[#32e4b6] transition-colors font-medium">
+                    {/* <div className="text-sm text-gray-400 group-hover:text-[#32e4b6] transition-colors font-medium">
                       {client.name}
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               ))}
