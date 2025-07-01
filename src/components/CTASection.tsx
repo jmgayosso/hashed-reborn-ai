@@ -4,6 +4,14 @@ import { ArrowRight } from 'lucide-react';
 const CTASection = () => {
   return (
     <section className="py-32 bg-black relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: `url('/lovable-uploads/90ed4939-6575-4389-adcb-ad8c0f56b02a.png')`
+        }}
+      ></div>
+      
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#32e4b6] rounded-full blur-3xl"></div>

@@ -85,7 +85,7 @@ const ProjectsSection = () => {
                   y: index === 0 ? 0 : y,
                   scale,
                   opacity,
-                  zIndex: projects.length - index
+                  zIndex: index + 1
                 }}
                 className="sticky top-24 mb-8"
               >
