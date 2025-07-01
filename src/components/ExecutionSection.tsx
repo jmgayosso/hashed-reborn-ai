@@ -1,22 +1,50 @@
 
-const ExecutionSection = () => {
-  const testimonials = [
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  company: string;
+  avatar: string;
+}
+
+interface ExecutionSectionProps {
+  testimonials?: Testimonial[];
+}
+
+const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionProps) => {
+  const defaultTestimonials: Testimonial[] = [
     {
       quote: "Hashed continues to play a pivotal role after four years. They've built precise smart contracts, engaging UIs, and provided invaluable guidance. We highly recommend them as development partners.",
-      author: "CONNOR IRISH",
-      avatar: "CI"
+      author: "JOHN WOTHERSPOON",
+      company: "BENNYFI CO-FOUNDER",
+      avatar: "/lovable-uploads/f983be12-0a2a-4f86-87c6-fc9ffd5a12f0.png"
     },
     {
       quote: "Hashed is part of our origin story. Together we built an international application that touches over $3B in private capital.",
       author: "CONNOR IRISH", 
+      company: "DIAMOND STANDARD CEO",
       avatar: "CI"
     },
     {
       quote: "Innovative solutions and excellent service. Hashed made a real difference for us. We'll continue working with them.",
       author: "JUN DAM",
+      company: "HYPHO FOUNDER",
       avatar: "JD"
     }
   ];
+
+  const testimonials = propTestimonials || defaultTestimonials;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   return (
     <section className="py-20 bg-black">
@@ -31,24 +59,79 @@ const ExecutionSection = () => {
           focus on a maximum of 10 active partners. Let's build together.
         </p>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="card-dark p-8">
-              <div className="text-[#32e4b6] text-4xl mb-6">"</div>
-              <p className="text-white mb-8 leading-relaxed">
-                {testimonial.quote}
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-medium text-sm">
-                    {testimonial.avatar}
-                  </span>
+        {/* Carousel Container */}
+        <div className="relative overflow-hidden">
+          <motion.div 
+            className="flex gap-8"
+            animate={{
+              x: `-${currentIndex * (100 / testimonials.length)}%`
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeInOut"
+            }}
+            style={{
+              width: `${testimonials.length * 100}%`
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="flex-shrink-0 bg-[#1a1a1a] rounded-2xl p-8 border border-gray-800"
+                style={{ width: `${100 / testimonials.length}%` }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Quote Icon */}
+                <div className="text-[#32e4b6] text-6xl font-bold mb-6 leading-none">"</div>
+                
+                {/* Quote Text */}
+                <p className="text-white text-lg mb-12 leading-relaxed">
+                  {testimonial.quote}
+                </p>
+                
+                {/* Author Section */}
+                <div className="flex items-center">
+                  <div className="w-16 h-16 rounded-full mr-4 overflow-hidden flex-shrink-0">
+                    {testimonial.avatar.startsWith('/') || testimonial.avatar.startsWith('http') ? (
+                      <img 
+                        src={testimonial.avatar} 
+                        alt={testimonial.author}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-600 flex items-center justify-center">
+                        <span className="text-white font-medium text-sm">
+                          {testimonial.avatar}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm tracking-wide mb-1">
+                      {testimonial.author}
+                    </div>
+                    <div className="text-[#32e4b6] text-sm font-medium">
+                      {testimonial.company}
+                    </div>
+                  </div>
                 </div>
-                <span className="text-white font-medium tracking-wide">
-                  {testimonial.author}
-                </span>
-              </div>
-            </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Indicators */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                index === currentIndex ? 'bg-[#32e4b6]' : 'bg-gray-600'
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
           ))}
         </div>
       </div>
