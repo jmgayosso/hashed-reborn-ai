@@ -35,10 +35,28 @@ const WhyUsSection = () => {
                   {feature.icon}
                 </div>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-4 tracking-wide">
+              <h3
+                className="mb-4"
+                style={{
+                  color: "#fff",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  letterSpacing: "4px",
+                  lineHeight: "14px",
+                  textAlign: "left",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                }}
+              >
                 {feature.title}
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p
+                style={{
+                  color: "#d1d5db",
+                  fontFamily: "Inter, sans-serif",
+                  lineHeight: "26px",
+                }}
+              >
                 {feature.description}
               </p>
             </div>

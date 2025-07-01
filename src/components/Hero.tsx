@@ -108,14 +108,14 @@ const Hero = () => {
                 />
               </span>
               <br />
-              <span className="text-white">NEW WAYS</span>
-              <motion.span 
+              <span className="text-white mt-5 inline-block">NEW WAYS</span>
+              {/* <motion.span 
                 className="text-[#32e4b6] ml-4 inline-block"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 1 }}
               >
                 ✨
-              </motion.span>
+              </motion.span> */}
             </motion.h1>
 
             <motion.p 
