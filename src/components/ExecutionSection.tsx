@@ -32,19 +32,27 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
       author: "JUN DAM",
       company: "HYPHO FOUNDER",
       avatar: "JD"
+    },
+    {
+      quote: "Outstanding technical expertise and professional service. The team delivered beyond our expectations every time.",
+      author: "SARAH CHEN",
+      company: "FINTECH INNOVATIONS CTO",
+      avatar: "SC"
     }
   ];
 
   const testimonials = propTestimonials || defaultTestimonials;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerSlide = 2;
+  const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % testimonials.length);
+      setCurrentIndex(prev => (prev + 1) % totalSlides);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [totalSlides]);
 
   return (
     <section className="py-20 bg-black">
@@ -64,73 +72,78 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: `-${currentIndex * (100 / testimonials.length)}%`
+              x: `-${currentIndex * 100}%`
             }}
             transition={{
               duration: 0.8,
               ease: "easeInOut"
             }}
             style={{
-              width: `${testimonials.length * 100}%`
+              width: `${totalSlides * 100}%`
             }}
           >
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="flex-shrink-0 bg-[#1a1a1a] rounded-2xl p-8 border border-gray-800"
-                style={{ width: `${100 / testimonials.length}%` }}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Quote Icon */}
-                <div className="text-[#32e4b6] text-6xl font-bold mb-6 leading-none">"</div>
-                
-                {/* Quote Text */}
-                <p className="text-white text-lg mb-12 leading-relaxed">
-                  {testimonial.quote}
-                </p>
-                
-                {/* Author Section */}
-                <div className="flex items-center">
-                  <div className="w-16 h-16 rounded-full mr-4 overflow-hidden flex-shrink-0">
-                    {testimonial.avatar.startsWith('/') || testimonial.avatar.startsWith('http') ? (
-                      <img 
-                        src={testimonial.avatar} 
-                        alt={testimonial.author}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gray-600 flex items-center justify-center">
-                        <span className="text-white font-medium text-sm">
-                          {testimonial.avatar}
-                        </span>
+            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+              <div key={slideIndex} className="flex gap-8" style={{ width: `${100 / totalSlides}%` }}>
+                {testimonials
+                  .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                  .map((testimonial, index) => (
+                    <motion.div
+                      key={slideIndex * itemsPerSlide + index}
+                      className="flex-1 bg-[#1a1a1a] rounded-2xl p-8 border border-gray-800"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {/* Quote Icon */}
+                      <div className="text-[#32e4b6] text-6xl font-bold mb-6 leading-none">"</div>
+                      
+                      {/* Quote Text */}
+                      <p className="text-white text-lg mb-12 leading-relaxed">
+                        {testimonial.quote}
+                      </p>
+                      
+                      {/* Author Section */}
+                      <div className="flex items-center">
+                        <div className="w-16 h-16 rounded-full mr-4 overflow-hidden flex-shrink-0">
+                          {testimonial.avatar.startsWith('/') || testimonial.avatar.startsWith('http') ? (
+                            <img 
+                              src={testimonial.avatar} 
+                              alt={testimonial.author}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gray-600 flex items-center justify-center">
+                              <span className="text-white font-medium text-sm">
+                                {testimonial.avatar}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                        <div>
+                          <div className="text-white font-bold text-sm tracking-wide mb-1">
+                            {testimonial.author}
+                          </div>
+                          <div className="text-[#32e4b6] text-sm font-medium">
+                            {testimonial.company}
+                          </div>
+                        </div>
                       </div>
-                    )}
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm tracking-wide mb-1">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-[#32e4b6] text-sm font-medium">
-                      {testimonial.company}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+                    </motion.div>
+                  ))}
+              </div>
             ))}
           </motion.div>
         </div>
 
         {/* Indicators */}
         <div className="flex justify-center mt-8 space-x-2">
-          {testimonials.map((_, index) => (
+          {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                 index === currentIndex ? 'bg-[#32e4b6]' : 'bg-gray-600'
               }`}
-              aria-label={`Go to testimonial ${index + 1}`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
