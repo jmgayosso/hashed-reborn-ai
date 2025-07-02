@@ -1,5 +1,6 @@
 
 import { ArrowRight } from 'lucide-react';
+import ArrowWhitCurve from '@/assets/icons/arrow_with_curve.svg'
 
 const CTASection = () => {
   return (
@@ -19,7 +20,18 @@ const CTASection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <p className="text-gray-300 text-lg mb-4 tracking-wider">
+        <p
+          className="mb-4"
+          style={{
+            color: '#fff',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '14px',
+            letterSpacing: '4px',
+            lineHeight: '14px',
+            textAlign: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
           DESIGN + DEVELOPMENT
         </p>
         <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
@@ -29,9 +41,21 @@ const CTASection = () => {
           TOGETHER
         </h2>
         
-        <button className="btn-primary inline-flex items-center gap-2 text-lg">
+        <button
+          className="btn-primary inline-flex items-center gap-2 text-lg"
+          style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '15px',
+            fontWeight: 500,
+            lineHeight: '15px',
+            textAlign: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
           TELL US ABOUT YOUR IDEA
-          <ArrowRight size={20} />
+          <img
+            src={ArrowWhitCurve}
+          />
         </button>
       </div>
     </section>

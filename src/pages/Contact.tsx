@@ -69,7 +69,7 @@ const Contact = () => {
     <div className="min-h-screen bg-black">
       <Navigation />
       <main className="pt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,14 +78,14 @@ const Contact = () => {
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 font-inter"> Contact Us </h1>
           </motion.div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="flex items-center justify-center"
             >
-              <div className="relative w-full max-w-md h-96 flex items-end justify-center shadow-2xl">
+              <div className="relative w-full max-w-md h-full flex items-end justify-center shadow-2xl">
                 <div
                   className="relative z-10 text-center w-full h-full flex items-end justify-center rounded-3xl p-10"
                   style={{
@@ -121,7 +121,21 @@ const Contact = () => {
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-300 mb-2 font-inter"> Name </label>
+                  <label
+                    htmlFor="name"
+                    className="font-inter"
+                    style={{
+                      color: '#b3b3b3',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '13px',
+                      fontWeight: 300,
+                      lineHeight: '20px',
+                      margin: '0px 0px 5px',
+                      display: 'block',
+                    }}
+                  >
+                    Name
+                  </label>
                   <Input
                     id="name"
                     name="name"
@@ -134,7 +148,18 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-gray-300 mb-2 font-inter"> Email Address </label>
+                  <label htmlFor="email"
+                    className="block text-gray-300 mb-2 font-inter"
+                    style={{
+                      color: '#b3b3b3',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '13px',
+                      fontWeight: 300,
+                      lineHeight: '20px',
+                      margin: '0px 0px 5px',
+                      display: 'block',
+                    }}
+                  > Email Address </label>
                   <Input
                     id="email"
                     name="email"
@@ -147,7 +172,17 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-gray-300 mb-2 font-inter"> Phone Number </label>
+                  <label htmlFor="phone"
+                    style={{
+                      color: '#b3b3b3',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '13px',
+                      fontWeight: 300,
+                      lineHeight: '20px',
+                      margin: '0px 0px 5px',
+                      display: 'block',
+                    }}
+                    className="block text-gray-300 mb-2 font-inter"> Phone Number </label>
                   <Input
                     id="phone"
                     name="phone"
@@ -159,7 +194,17 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-gray-300 mb-2 font-inter"> Your Message </label>
+                  <label
+                    style={{
+                      color: '#b3b3b3',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '13px',
+                      fontWeight: 300,
+                      lineHeight: '20px',
+                      margin: '0px 0px 5px',
+                      display: 'block',
+                    }}
+                  htmlFor="message" className="block text-gray-300 mb-2 font-inter"> Your Message </label>
                   <Textarea
                     id="message"
                     name="message"

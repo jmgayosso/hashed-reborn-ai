@@ -26,31 +26,31 @@ const Footer = () => {
             <nav className="flex space-x-8">
               <Link 
                 to="/" 
-                className={`nav-link font-inter ${isActive('/') ? 'text-[#32e4b6]' : 'text-gray-300'}`}
+                className={`nav-link ${isActive('/') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
               >
                 Home
               </Link>
               <Link 
                 to="/about" 
-                className={`nav-link font-inter ${isActive('/about') ? 'text-[#32e4b6]' : 'text-gray-300'}`}
+                className={`nav-link ${isActive('/about') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
               >
                 About
               </Link>
               <a 
                 href="#products" 
-                className="nav-link text-gray-300 font-inter"
+                className="nav-link text-[#b3b3b3] font-inter text-[17px] font-light leading-6 text-center"
               >
                 Products
               </a>
               <Link 
                 to="/projects" 
-                className={`nav-link font-inter ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-gray-300'}`}
+                className={`nav-link ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
               >
                 Projects
               </Link>
               <Link 
                 to="/contact" 
-                className={`nav-link font-inter ${isActive('/contact') ? 'text-[#32e4b6]' : 'text-gray-300'}`}
+                className={`nav-link ${isActive('/contact') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
               >
                 Contact
               </Link>

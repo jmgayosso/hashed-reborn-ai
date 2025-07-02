@@ -32,31 +32,81 @@ const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link 
                 to="/" 
-                className={`nav-link font-inter ${isActive('/') ? 'text-[#32e4b6]' : 'text-white'}`}
+                className={`font-inter uppercase transition-colors ${isActive('/') ? 'text-[#32e4b6]' : 'text-white'}`}
+                style={{
+                  color: isActive('/') ? '#32e4b6' : '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 300,
+                  lineHeight: '24px',
+                  padding: '0px 20px',
+                  textAlign: 'left',
+                  textTransform: 'uppercase',
+                }}
               >
                 HOME
               </Link>
               <Link 
                 to="/about" 
-                className={`nav-link font-inter ${isActive('/about') ? 'text-[#32e4b6]' : 'text-white'}`}
+                className={`font-inter uppercase transition-colors ${isActive('/about') ? 'text-[#32e4b6]' : 'text-white'}`}
+                style={{
+                  color: isActive('/about') ? '#32e4b6' : '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 300,
+                  lineHeight: '24px',
+                  padding: '0px 20px',
+                  textAlign: 'left',
+                  textTransform: 'uppercase',
+                }}
               >
                 ABOUT
               </Link>
               <a 
                 href="#products" 
-                className="nav-link text-white font-inter"
+                className="font-inter uppercase transition-colors text-white"
+                style={{
+                  color: '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 300,
+                  lineHeight: '24px',
+                  padding: '0px 20px',
+                  textAlign: 'left',
+                  textTransform: 'uppercase',
+                }}
               >
                 PRODUCTS
               </a>
               <Link 
                 to="/projects" 
-                className={`nav-link font-inter ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-white'}`}
+                className={`font-inter uppercase transition-colors ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-white'}`}
+                style={{
+                  color: isActive('/projects') ? '#32e4b6' : '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 300,
+                  lineHeight: '24px',
+                  padding: '0px 20px',
+                  textAlign: 'left',
+                  textTransform: 'uppercase',
+                }}
               >
                 PROJECTS
               </Link>
               <Link 
                 to="/contact" 
-                className={`nav-link font-inter ${isActive('/contact') ? 'text-[#32e4b6]' : 'text-white'}`}
+                className={`font-inter uppercase transition-colors ${isActive('/contact') ? 'text-[#32e4b6]' : 'text-white'}`}
+                style={{
+                  color: isActive('/contact') ? '#32e4b6' : '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  fontWeight: 300,
+                  lineHeight: '24px',
+                  padding: '0px 20px',
+                  textAlign: 'left',
+                  textTransform: 'uppercase',
+                }}
               >
                 CONTACT
               </Link>
