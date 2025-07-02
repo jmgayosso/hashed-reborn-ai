@@ -1,23 +1,17 @@
+
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim'; // o loadFull si necesitas todas las características
+import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
-import { useState, useEffect } from 'react'; // Agregamos useCallback
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
     const [ init, setInit ] = useState(false);
 
-    // this should be run only once per application lifetime
     useEffect(() => {
         initParticlesEngine(async (engine) => {
-            // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-            // starting from v2 you can add only the features you need reducing the bundle size
-            //await loadAll(engine);
-            //await loadFull(engine);
             await loadSlim(engine);
-            //await loadBasic(engine);
         }).then(() => {
             setInit(true);
         });
@@ -38,7 +32,7 @@ const Hero = () => {
         options={{
           background: {
             color: {
-              value: "transparent", // El fondo ya lo manejamos con el gradiente, las partículas serán transparentes
+              value: "transparent",
             },
           },
           fpsLimit: 120,
@@ -52,24 +46,26 @@ const Hero = () => {
                 enable: true,
                 mode: "repulse",
               },
-              resize: true,
+              resize: {
+                enable: true,
+              },
             },
             modes: {
               push: {
                 quantity: 4,
               },
               repulse: {
-                distance: 100, // Distancia de repulsión al pasar el mouse
+                distance: 100,
                 duration: 0.4,
               },
             },
           },
           particles: {
             color: {
-              value: "#32e4b6", // Color de las partículas, similar a tu color de acento
+              value: "#32e4b6",
             },
             links: {
-              color: "#32e4b6", // Color de las líneas entre partículas
+              color: "#32e4b6",
               distance: 150,
               enable: true,
               opacity: 0.5,
@@ -82,29 +78,29 @@ const Hero = () => {
                 default: "bounce",
               },
               random: false,
-              speed: 1, // Velocidad de las partículas
+              speed: 1,
               straight: false,
             },
             number: {
               density: {
                 enable: true,
-                area: 800,
+                value: 800,
               },
-              value: 80, // Número de partículas
+              value: 80,
             },
             opacity: {
-              value: 0.5, // Opacidad general de las partículas
+              value: 0.5,
             },
             shape: {
-              type: "circle", // Forma de las partículas
+              type: "circle",
             },
             size: {
-              value: { min: 1, max: 5 }, // Tamaño aleatorio de las partículas
+              value: { min: 1, max: 5 },
             },
           },
           detectRetina: true,
         }}
-        className="absolute inset-0 z-0" // Aseguramos que las partículas estén en el fondo
+        className="absolute inset-0 z-0"
       />}
 
       {/* Content */}
@@ -135,13 +131,6 @@ const Hero = () => {
               </span>
               <br />
               <span className="text-white mt-5 inline-block">NEW WAYS</span>
-              {/* <motion.span 
-                className="text-[#32e4b6] ml-4 mt-4 inline-block"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-              >
-                ✨
-              </motion.span> */}
             </motion.h1>
 
             <motion.p 
