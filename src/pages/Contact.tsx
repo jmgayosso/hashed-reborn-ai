@@ -1,3 +1,4 @@
+
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -12,19 +13,18 @@ import { useToast } from '@/hooks/use-toast';
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false); // Add state for submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true); // Set submitting to true when the form is submitted
+    setIsSubmitting(true);
 
     try {
-      // Send data to Formspree
       const response = await fetch('https://formspree.io/f/mvgrykde', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json' // Important for Formspree to return JSON responses
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData),
       });
@@ -34,16 +34,15 @@ const Contact = () => {
           title: "Message Sent!",
           description: "We'll get back to you as soon as possible.",
         });
-        setFormData({ name: '', email: '', phone: '', message: '' }); // Clear form fields
+        setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
-        // Handle Formspree errors (e.g., invalid email, too many submissions)
         const data = await response.json();
         const errorMessage = data.errors ? data.errors.map((error: any) => error.message).join(', ') : 'There was an issue sending your message.';
 
         toast({
           title: "Submission Error",
           description: errorMessage,
-          variant: "destructive", // Assuming your toast component has a 'destructive' variant
+          variant: "destructive",
         });
       }
     } catch (error) {
@@ -54,11 +53,15 @@ const Contact = () => {
         variant: "destructive",
       });
     } finally {
-      setIsSubmitting(false); // Reset submitting state regardless of success or failure
+      setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | React.ChangeEvent<HTMLTextAreaElement>>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -67,7 +70,6 @@ const Contact = () => {
       <Navigation />
       <main className="pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Page Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +79,6 @@ const Contact = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 font-inter"> Contact Us </h1>
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Side - Decorative Card */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -112,7 +113,6 @@ const Contact = () => {
                 </div>
               </div>
             </motion.div>
-            {/* Right Side - Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -120,7 +120,6 @@ const Contact = () => {
               className="space-y-6"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Field */}
                 <div>
                   <label htmlFor="name" className="block text-gray-300 mb-2 font-inter"> Name </label>
                   <Input
@@ -129,12 +128,11 @@ const Contact = () => {
                     type="text"
                     placeholder="e. g. John Doe"
                     value={formData.name}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
                     className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
-                {/* Email Field */}
                 <div>
                   <label htmlFor="email" className="block text-gray-300 mb-2 font-inter"> Email Address </label>
                   <Input
@@ -143,12 +141,11 @@ const Contact = () => {
                     type="email"
                     placeholder="e. g. johndoe@email.com"
                     value={formData.email}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
                     className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
-                {/* Phone Field */}
                 <div>
                   <label htmlFor="phone" className="block text-gray-300 mb-2 font-inter"> Phone Number </label>
                   <Input
@@ -157,11 +154,10 @@ const Contact = () => {
                     type="tel"
                     placeholder="(123) - 456 - 789"
                     value={formData.phone}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
-                {/* Message Field */}
                 <div>
                   <label htmlFor="message" className="block text-gray-300 mb-2 font-inter"> Your Message </label>
                   <Textarea
@@ -169,20 +165,19 @@ const Contact = () => {
                     name="message"
                     placeholder="Write Your Message Here"
                     value={formData.message}
-                    onChange={handleChange}
+                    onChange={handleTextareaChange}
                     required
                     rows={6}
                     className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6] resize-none"
                   />
                 </div>
-                {/* Submit Button */}
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
                     type="submit"
                     className="w-auto bg-[#32e4b6] hover:bg-[#16B896] text-black font-bold py-3 px-8 rounded-xl font-inter transition-all duration-300"
-                    disabled={isSubmitting} // Disable button while submitting
+                    disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : 'Submit'} {/* Change button text based on submission status */}
+                    {isSubmitting ? 'Sending...' : 'Submit'}
                   </Button>
                 </motion.div>
               </form>
