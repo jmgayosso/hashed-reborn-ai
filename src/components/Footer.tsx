@@ -30,12 +30,12 @@ const Footer = () => {
               >
                 Home
               </Link>
-              <a 
-                href="#about" 
-                className="nav-link text-gray-300 font-inter"
+              <Link 
+                to="/about" 
+                className={`nav-link font-inter ${isActive('/about') ? 'text-[#32e4b6]' : 'text-gray-300'}`}
               >
                 About
-              </a>
+              </Link>
               <a 
                 href="#products" 
                 className="nav-link text-gray-300 font-inter"

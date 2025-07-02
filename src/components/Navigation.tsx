@@ -36,12 +36,12 @@ const Navigation = () => {
               >
                 HOME
               </Link>
-              <a 
-                href="#about" 
-                className="nav-link text-white font-inter"
+              <Link 
+                to="/about" 
+                className={`nav-link font-inter ${isActive('/about') ? 'text-[#32e4b6]' : 'text-white'}`}
               >
                 ABOUT
-              </a>
+              </Link>
               <a 
                 href="#products" 
                 className="nav-link text-white font-inter"
@@ -84,12 +84,12 @@ const Navigation = () => {
               >
                 HOME
               </Link>
-              <a 
-                href="#about" 
-                className="block text-white hover:text-[#32e4b6] transition-colors py-2 font-inter"
+              <Link 
+                to="/about" 
+                className={`block font-inter hover:text-[#32e4b6] transition-colors py-2 ${isActive('/about') ? 'text-[#32e4b6]' : 'text-white'}`}
               >
                 ABOUT
-              </a>
+              </Link>
               <a 
                 href="#products" 
                 className="block text-white hover:text-[#32e4b6] transition-colors py-2 font-inter"
