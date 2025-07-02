@@ -76,16 +76,16 @@ const About = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mb-16"
+              className="mb-5"
             >
               <p className="text-gray-400 text-sm font-inter mb-4 tracking-widest">
                 ACHIEVEMENTS
               </p>
               <div
-                className="mb-12 flex flex-col justify-start items-start w-full text-left gap-8"
+                className="flex flex-col justify-center items-start w-full text-left h-full"
               >
                 <h2
-                  className="mb-4"
+                  className="mb-0 pb-0"
                   style={{
                     color: '#fff',
                     fontFamily: 'Inter, sans-serif',
@@ -99,8 +99,8 @@ const About = () => {
                   Awards
                 </h2>
                 <h2
+                  className='text-[#32e4b6]'
                   style={{
-                    color: '#fff',
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '64px',
                     fontWeight: 600,
