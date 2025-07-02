@@ -1,56 +1,27 @@
-
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-
-interface Particle {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  opacity: number;
-  velocityX: number;
-  velocityY: number;
-}
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim'; // o loadFull si necesitas todas las características
+import type { Engine } from '@tsparticles/engine';
+import { useState, useEffect } from 'react'; // Agregamos useCallback
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [particles, setParticles] = useState<Particle[]>([]);
+    const [ init, setInit ] = useState(false);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  useEffect(() => {
-    const createParticle = (): Particle => ({
-      id: Math.random(),
-      x: mousePosition.x + (Math.random() - 0.5) * 100,
-      y: mousePosition.y + (Math.random() - 0.5) * 100,
-      size: Math.random() * 4 + 1,
-      opacity: Math.random() * 0.8 + 0.2,
-      velocityX: (Math.random() - 0.5) * 2,
-      velocityY: (Math.random() - 0.5) * 2,
-    });
-
-    const interval = setInterval(() => {
-      setParticles(prev => {
-        const newParticles = [...prev, createParticle()].slice(-20);
-        return newParticles.map(particle => ({
-          ...particle,
-          x: particle.x + particle.velocityX,
-          y: particle.y + particle.velocityY,
-          opacity: particle.opacity - 0.02,
-        })).filter(particle => particle.opacity > 0);
-      });
-    }, 50);
-
-    return () => clearInterval(interval);
-  }, [mousePosition]);
+    // this should be run only once per application lifetime
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            //await loadAll(engine);
+            //await loadFull(engine);
+            await loadSlim(engine);
+            //await loadBasic(engine);
+        }).then(() => {
+            setInit(true);
+        });
+    }, []);
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
@@ -61,25 +32,80 @@ const Hero = () => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#32e4b6] rounded-full blur-3xl opacity-5 animate-pulse delay-1000"></div>
       </div>
 
-      {/* Particle System */}
-      <div className="absolute inset-0 pointer-events-none">
-        {particles.map(particle => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-[#32e4b6] rounded-full"
-            style={{
-              left: particle.x,
-              top: particle.y,
-              width: particle.size,
-              height: particle.size,
-              opacity: particle.opacity,
-            }}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
-          />
-        ))}
-      </div>
+      {/* Particle System with react-tsparticles */}
+      { init && <Particles
+        id="tsparticles"
+        options={{
+          background: {
+            color: {
+              value: "transparent", // El fondo ya lo manejamos con el gradiente, las partículas serán transparentes
+            },
+          },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 100, // Distancia de repulsión al pasar el mouse
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#32e4b6", // Color de las partículas, similar a tu color de acento
+            },
+            links: {
+              color: "#32e4b6", // Color de las líneas entre partículas
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outModes: {
+                default: "bounce",
+              },
+              random: false,
+              speed: 1, // Velocidad de las partículas
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: 80, // Número de partículas
+            },
+            opacity: {
+              value: 0.5, // Opacidad general de las partículas
+            },
+            shape: {
+              type: "circle", // Forma de las partículas
+            },
+            size: {
+              value: { min: 1, max: 5 }, // Tamaño aleatorio de las partículas
+            },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0 z-0" // Aseguramos que las partículas estén en el fondo
+      />}
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
@@ -110,7 +136,7 @@ const Hero = () => {
               <br />
               <span className="text-white mt-5 inline-block">NEW WAYS</span>
               {/* <motion.span 
-                className="text-[#32e4b6] ml-4 inline-block"
+                className="text-[#32e4b6] ml-4 mt-4 inline-block"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 1 }}
               >

@@ -7,10 +7,14 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
-            <div className="w-8 h-8 bg-[#32e4b6] rounded-full flex items-center justify-center mr-3">
-              <div className="w-4 h-4 border-2 border-black rounded-full"></div>
+            {/* <span className="text-white text-xl font-bold">HASHED</span> */}
+            <div className="flex items-center">
+              <div className="flex-shrink-0 flex items-center">
+                <Link to="/">
+                  <img src='/images/hashedIcon.svg' className="hashed-icon"/>
+                </Link>
+              </div>
             </div>
-            <span className="text-white text-xl font-bold">HASHED</span>
           </div>
           
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
