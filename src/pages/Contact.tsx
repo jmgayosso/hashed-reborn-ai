@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import FAQSection from '@/components/FAQSection';
+import CTASection from '@/components/CTASection';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -59,19 +61,31 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
               className="flex items-center justify-center"
             >
-              <div className="relative w-full max-w-md h-96 bg-gradient-to-br from-[#32e4b6] via-teal-400 to-cyan-400 rounded-3xl p-8 flex items-center justify-center shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#32e4b6]/90 via-teal-400/90 to-cyan-400/90 rounded-3xl"></div>
-                <div className="relative z-10 text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 font-inter">
-                    HOW CAN WE
-                    <br />
-                    HELP?
-                  </h2>
+              <div className="relative w-full max-w-md h-96  flex items-end justify-center shadow-2xl">
+                <div
+                  className="relative z-10 text-center w-full h-full flex items-end justify-center rounded-3xl p-10"
+                  style={{
+                    backgroundImage: "linear-gradient(180deg, rgba(0,0,0,0), black 90%), url(https://cdn.prod.website-files.com/65d4ed6d925bb1886eaebbc4/662fc06402c4c408808e7506_Background%20pattern%20photo.jpg)",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  <div className="rounded-2xl w-full text-left p-md">
+                    <h3
+                      className="font-inter mb-10 text-left"
+                      style={{
+                        color: '#fff',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '52px',
+                        fontWeight: 600,
+                        lineHeight: '52px',
+                        textTransform: 'uppercase',
+                      }}
+                    >
+                      HOW CAN WE HELP?
+                    </h3>
+                  </div>
                 </div>
-                {/* Decorative curves */}
-                <div className="absolute top-8 right-8 w-32 h-32 border-4 border-white/20 rounded-full"></div>
-                <div className="absolute bottom-8 left-8 w-24 h-24 border-4 border-white/20 rounded-full"></div>
-                <div className="absolute top-1/2 left-4 w-16 h-16 border-4 border-white/20 rounded-full"></div>
               </div>
             </motion.div>
 
@@ -96,7 +110,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-14 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
+                    className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
 
@@ -113,7 +127,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-14 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
+                    className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
 
@@ -129,7 +143,7 @@ const Contact = () => {
                     placeholder="(123) - 456 - 789"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-14 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
+                    className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
 
@@ -165,6 +179,10 @@ const Contact = () => {
               </form>
             </motion.div>
           </div>
+        </div>
+        <div>
+          <FAQSection />
+          <CTASection />
         </div>
       </main>
 
