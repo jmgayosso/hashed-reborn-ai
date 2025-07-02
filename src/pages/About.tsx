@@ -3,13 +3,27 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import AchievementsCarousel from '@/components/AchievementsCarousel';
+import ClientsSection from '@/components/ClientsSection';
+import CTASection from '@/components/CTASection';
+import hashedTeamImage from '../assets/images/hashedTeam.jpeg'; 
 
 const About = () => {
+  const clients = [
+    { name: "BitCash", logo: "$", image: "/images/clients/bitcash.svg" },
+    { name: "PRXY", logo: "PRXY", image: "/images/clients/citi.svg" },
+    { name: "Citi", logo: "citi", image: "/images/clients/credit.svg" },
+    { name: "SPS Commerce", logo: "SPS", image: "/images/clients/diamon.svg" },
+    { name: "Hypho", logo: "Hypho", image: "/images/clients/hancock.svg" },
+    { name: "Credit Suisse", logo: "CS", image: "/images/clients/hypha.svg" },
+    { name: "Diamond Standard", logo: "◊", image: "/images/clients/prxy.svg" },
+    { name: "Snowflake", logo: "❄", image: "/images/clients/seeds.svg" }
+  ];
+
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
       <main className="pt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
           {/* About Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-32">
             {/* Left Side - Title and Text */}
@@ -22,7 +36,17 @@ const About = () => {
               <h1 className="text-8xl md:text-9xl font-bold text-white mb-8 font-inter">
                 ABOUT
               </h1>
-              <p className="text-gray-300 text-lg leading-relaxed font-inter">
+              <p
+                className="font-inter"
+                style={{
+                  color: '#b3b3b3',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '17px',
+                  fontWeight: 300,
+                  lineHeight: '24px',
+                  textAlign: 'left',
+                }}
+              >
                 We are a team of experienced builders committed to our craft and
                 the success of our partners. We only work with exceptional
                 teams and help them build their vision.
@@ -38,7 +62,7 @@ const About = () => {
             >
               <div className="relative w-full h-96 rounded-2xl overflow-hidden">
                 <img 
-                  src="/lovable-uploads/b131d4e3-ce19-44f8-830a-73a40e6dedec.png"
+                  src={hashedTeamImage}
                   alt="Hashed Team"
                   className="w-full h-full object-cover"
                 />
@@ -47,26 +71,52 @@ const About = () => {
           </div>
 
           {/* Achievements Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-16"
-          >
-            <div className="mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-32">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mb-16"
+            >
               <p className="text-gray-400 text-sm font-inter mb-4 tracking-widest">
                 ACHIEVEMENTS
               </p>
-              <h2 className="text-6xl md:text-7xl font-bold text-white mb-4 font-inter">
-                Awards
-              </h2>
-              <h2 className="text-6xl md:text-7xl font-bold text-[#32e4b6] font-inter">
-                + Acknowledgments.
-              </h2>
-            </div>
-            
+              <div
+                className="mb-12 flex flex-col justify-start items-start w-full text-left gap-8"
+              >
+                <h2
+                  className="mb-4"
+                  style={{
+                    color: '#fff',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '64px',
+                    fontWeight: 600,
+                    lineHeight: '64px',
+                    textAlign: 'left',
+                    textTransform: 'capitalize',
+                  }}
+                >
+                  Awards
+                </h2>
+                <h2
+                  style={{
+                    color: '#fff',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '64px',
+                    fontWeight: 600,
+                    lineHeight: '64px',
+                    textAlign: 'left',
+                    textTransform: 'capitalize',
+                  }}
+                >
+                  + Acknowledgments.
+                </h2>
+              </div>
+            </motion.div>
             <AchievementsCarousel />
-          </motion.div>
+          </div>
+          <ClientsSection clients={clients} />
+          <CTASection />
         </div>
       </main>
       <Footer />

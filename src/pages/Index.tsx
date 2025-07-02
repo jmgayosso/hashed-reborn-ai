@@ -19,7 +19,6 @@ const Index = () => {
     { name: "Credit Suisse", logo: "CS", image: "/images/clients/hypha.svg" },
     { name: "Diamond Standard", logo: "◊", image: "/images/clients/prxy.svg" },
     { name: "Snowflake", logo: "❄", image: "/images/clients/seeds.svg" }
-    // { name: "Microsoft", logo: "MS", image: "/images/clients/un.svg" }
   ];
 
   return (

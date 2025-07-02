@@ -48,7 +48,7 @@ const AchievementsCarousel = () => {
           const y = useTransform(
             scrollYProgress,
             [0, 1],
-            [0, -(index * 20)]
+            [0, +(index * 20)]
           );
           
           const scale = useTransform(
@@ -64,8 +64,8 @@ const AchievementsCarousel = () => {
               key={achievement.id}
               style={{ 
                 y: index === 0 ? 0 : y,
-                scale,
-                zIndex: achievements.length - index
+                // scale,
+                zIndex: achievements.length + index
               }}
               className="sticky top-24 mb-8"
             >
