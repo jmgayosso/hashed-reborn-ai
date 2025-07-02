@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
@@ -84,7 +83,6 @@ const Hero = () => {
             number: {
               density: {
                 enable: true,
-                value: 800,
               },
               value: 80,
             },

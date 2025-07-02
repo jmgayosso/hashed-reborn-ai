@@ -79,6 +79,10 @@
   .nav-link:hover::after {
     width: 100%;
   }
+
+  .font-inter {
+    font-family: 'Inter', ui-sans-serif, system-ui;
+  }
 }
 
 .hashed-icon {
