@@ -148,7 +148,9 @@ const About = () => {
               <AchievementsCarousel />
             </motion.div>
           </div>
-          <ClientsSection clients={clients} />
+          <div className="mt-24">
+            <ClientsSection clients={clients} />
+          </div>
           <CTASection />
         </div>
       </main>

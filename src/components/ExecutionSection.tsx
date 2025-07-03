@@ -1,7 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
+import jhonAvatar from '@/assets/screenshots/John Wotherspoon-p-500.jpeg'
+import connorAvatar from '@/assets/screenshots/connorIrish.png'
+import junAvatar from '@/assets/screenshots/jun.jpg'
+import louiseAvatar from '@/assets/screenshots/Louise.png'
 interface Testimonial {
   quote: string;
   author: string;
@@ -19,25 +22,25 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
       quote: "Hashed continues to play a pivotal role after four years. They've built precise smart contracts, engaging UIs, and provided invaluable guidance. We highly recommend them as development partners.",
       author: "JOHN WOTHERSPOON",
       company: "BENNYFI CO-FOUNDER",
-      avatar: "/lovable-uploads/f983be12-0a2a-4f86-87c6-fc9ffd5a12f0.png"
+      avatar: jhonAvatar
     },
     {
       quote: "Hashed is part of our origin story. Together we built an international application that touches over $3B in private capital.",
       author: "CONNOR IRISH", 
-      company: "DIAMOND STANDARD CEO",
-      avatar: "CI"
+      company: "CEO OF PRXY",
+      avatar: connorAvatar
     },
     {
       quote: "Innovative solutions and excellent service. Hashed made a real difference for us. We'll continue working with them.",
       author: "JUN DAM",
-      company: "HYPHO FOUNDER",
-      avatar: "JD"
+      company: "CEO OF BITCASH",
+      avatar: junAvatar
     },
     {
-      quote: "Outstanding technical expertise and professional service. The team delivered beyond our expectations every time.",
-      author: "SARAH CHEN",
-      company: "FINTECH INNOVATIONS CTO",
-      avatar: "SC"
+      quote: "The value of Hashed isn't just that they are smart - they have a fire in their gut for the technology and ecosystem, which makes all the difference in a programming team. We never have to worry about them staying up-to-date on the latest efficiencies and processes.",
+      author: "Louise W. Reed",
+      company: "CEO OF AFLOAT",
+      avatar: louiseAvatar
     }
   ];
 
@@ -49,7 +52,7 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % totalSlides);
-    }, 5000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, [totalSlides]);
@@ -62,11 +65,32 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 max-w-4xl">
+        <h2
+          className="mb-8 max-w-4xl"
+          style={{
+            color: '#fff',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '52px',
+            fontWeight: 600,
+            lineHeight: '52px',
+            textAlign: 'left',
+            textTransform: 'uppercase',
+            letterSpacing: 0,
+          }}
+        >
           EXECUTION IS EVERYTHING
         </h2>
-        
-        <p className="text-lg text-gray-300 mb-16 max-w-6xl leading-relaxed">
+        <p
+          className="mb-16 max-w-6xl"
+          style={{
+            color: '#b3b3b3',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '22px',
+            fontWeight: 300,
+            lineHeight: '32px',
+            textAlign: 'left',
+          }}
+        >
           Executing an idea takes focus and craftsmanship. Our goal is to build long term relationships with highly successful 
           companies. At Hashed, we recognize we can't deliver the outcomes we want with a high volume of projects. That's why we 
           focus on a maximum of 10 active partners. Let's build together.
@@ -90,9 +114,16 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
                 </div>
                 
                 {/* Quote Text */}
-                <p className="text-white text-lg mb-12 leading-relaxed">
+                <h4
+                  className="text-white text-lg mb-12"
+                  style={{
+                    color: '#fff',
+                    fontFamily: 'Inter, sans-serif',
+                    lineHeight: '42px',
+                  }}
+                >
                   {testimonial.quote}
-                </p>
+                </h4>
                 
                 {/* Author Section */}
                 <div className="flex items-center">
@@ -112,10 +143,31 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
                     )}
                   </div>
                   <div>
-                    <div className="text-white font-bold text-sm tracking-wide mb-1">
+                    <div
+                      style={{
+                        color: '#fff',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '4px',
+                        lineHeight: '14px',
+                        textTransform: 'uppercase',
+                        fontWeight: 700,
+                        marginBottom: '15px',
+                      }}
+                    >
                       {testimonial.author}
                     </div>
-                    <div className="text-[#32e4b6] text-sm font-medium">
+                    <div
+                      style={{
+                        color: '#32e4b6',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '4px',
+                        lineHeight: '14px',
+                        textTransform: 'uppercase',
+                        fontWeight: 700,
+                      }}
+                    >
                       {testimonial.company}
                     </div>
                   </div>
