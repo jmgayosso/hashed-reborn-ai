@@ -68,7 +68,16 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-[#32e4b6] mt-8 pt-8">
-          <p className="text-gray-500 text-center font-inter">
+          <p
+            className="text-left"
+            style={{
+              color: '#b3b3b3',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '17px',
+              fontWeight: 300,
+              lineHeight: '24px',
+            }}
+          >
             © 2025 Hashed. All Rights Reserved.
           </p>
         </div>

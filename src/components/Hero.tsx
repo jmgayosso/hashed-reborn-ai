@@ -9,11 +9,11 @@ const Hero = () => {
     const [ init, setInit ] = useState(false);
 
     useEffect(() => {
-        initParticlesEngine(async (engine) => {
-            await loadSlim(engine);
-        }).then(() => {
-            setInit(true);
-        });
+        // initParticlesEngine(async (engine) => {
+        //     await loadSlim(engine);
+        // }).then(() => {
+        //     setInit(true);
+        // });
     }, []);
 
   return (

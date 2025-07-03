@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import ArrowWhitCurve from '@/assets/icons/arrow_with_curve.svg'
 
 interface Project {
   id: number;
@@ -94,23 +94,69 @@ const ProjectsSection = () => {
                     </div>
                     
                     <div className="p-8 lg:p-12 flex flex-col justify-center">
-                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                      <h3
+                        className="mb-4"
+                        style={{
+                          color: "#fff",
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "52px",
+                          fontWeight: 600,
+                          lineHeight: "52px",
+                          textAlign: "left",
+                          textTransform: "uppercase"
+                        }}
+                      >
                         {project.title}
                       </h3>
-                      <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                      <p
+                        style={{
+                          color: "#b3b3b3",
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "17px",
+                          fontWeight: 300,
+                          lineHeight: "24px",
+                          textAlign: "left"
+                        }}
+                        className="mb-8"
+                      >
                         {project.description}
                       </p>
                       
-                      <button className="inline-flex items-center gap-2 text-[#32e4b6] hover:text-[#16B896] transition-colors mb-8 text-lg font-medium">
+                      <button
+                        className="inline-flex items-center gap-2 mb-8 font-medium"
+                        style={{
+                          color: "#fff",
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "14px",
+                          letterSpacing: "4px",
+                          lineHeight: "14px",
+                          textAlign: "left",
+                          textTransform: "uppercase"
+                        }}
+                      >
                         VIEW DETAILS
-                        <ArrowRight size={20} />
+                        <img
+                          src={ArrowWhitCurve}
+                          style={{ filter: "invert(62%) sepia(93%) saturate(749%) hue-rotate(110deg) brightness(97%) contrast(92%)" }}
+                          alt="Arrow"
+                          className='h-7 w-7'
+                        />
                       </button>
                       
                       <div className="flex gap-4 flex-wrap">
                         {project.tags.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}
-                            className="px-6 py-3 border border-gray-600 rounded-full text-white text-sm font-medium hover:border-[#32e4b6] transition-colors"
+                            className="px-6 py-3 border border-gray-600 rounded-[1vw] text-white text-sm font-medium hover:border-[#32e4b6] transition-colors"
+                            style={{
+                              color: "#fff",
+                              fontFamily: "Inter, sans-serif",
+                              fontSize: "14px",
+                              letterSpacing: "4px",
+                              lineHeight: "14px",
+                              textAlign: "left",
+                              textTransform: "uppercase"
+                            }}
                           >
                             {tag}
                           </span>
@@ -125,9 +171,23 @@ const ProjectsSection = () => {
         </div>
         
         <div className="text-center mt-16">
-          <button className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4">
+          <button
+            className="btn-primary inline-flex items-center gap-2 px-8 py-4"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "15px",
+              fontWeight: 500,
+              lineHeight: "15px",
+              textAlign: "center",
+              textTransform: "uppercase"
+            }}
+          >
             SEE ALL CASE STUDIES
-            <ArrowRight size={20} />
+            <img
+              src={ArrowWhitCurve}
+              alt="Arrow"
+              className="h-7 w-7"
+            />
           </button>
         </div>
       </div>

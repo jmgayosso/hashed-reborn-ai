@@ -34,10 +34,30 @@ const CTASection = () => {
         >
           DESIGN + DEVELOPMENT
         </p>
-        <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
+        <h2
+          className="mb-1"
+          style={{
+            color: '#fff',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '64px',
+            fontWeight: 600,
+            lineHeight: '64px',
+            textAlign: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
           LET'S BUILD
         </h2>
-        <h2 className="text-5xl md:text-7xl font-bold text-[#32e4b6] mb-12">
+        <h2 className="text-[#32e4b6] mb-12"
+          style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '64px',
+            fontWeight: 600,
+            lineHeight: '64px',
+            textAlign: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
           TOGETHER
         </h2>
         

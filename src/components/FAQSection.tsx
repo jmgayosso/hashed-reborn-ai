@@ -46,20 +46,55 @@ const FAQSection = () => {
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2
+          className="mb-4"
+          style={{
+            color: "#fff",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "52px",
+            fontWeight: 600,
+            lineHeight: "52px",
+            textTransform: "uppercase"
+          }}
+        >
           FREQUENTLY ASKED QUESTIONS
         </h2>
-        <p className="text-gray-300 mb-12">
+        <p
+          className="mb-12"
+          style={{
+            color: "#b3b3b3",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "17px",
+            fontWeight: 300,
+            lineHeight: "24px"
+          }}
+        >
           If you have anything else you want to ask, reach out to us.
         </p>
         
         <div className="grid md:grid-cols-3 gap-8">
           {faqs.map((faq, index) => (
             <div key={index} className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">
+              <h3
+                style={{
+                  color: "#fff",
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  lineHeight: "20px"
+                }}
+              >
                 {faq.question}
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p
+                className="mt-4"
+                style={{
+                  color: "#b3b3b3",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  lineHeight: "24px",
+                  margin: "16px 0px 0px"
+                }}
+              >
                 {faq.answer}
               </p>
             </div>
