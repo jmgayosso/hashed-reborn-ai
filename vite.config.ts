@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: 'jmgayosso/hashed-reborn-ai',
+  base: 'hashed-reborn-ai',
   plugins: [
     react(),
     mode === 'development' &&
