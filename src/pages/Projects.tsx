@@ -38,7 +38,7 @@ const Projects = () => {
                 className="group cursor-pointer"
               >
                 <Link to={`/projects/${project.id}`}>
-                  <div className="bg-[#1a1a1a] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-all duration-300">
+                  <div className="bg-[#222] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-all duration-300 h-full">
                     {/* Project Image */}
                     <div className="relative h-64 overflow-hidden">
                       <motion.img 
@@ -53,7 +53,7 @@ const Projects = () => {
                     
                     {/* Project Content */}
                     <div className="p-8">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 mb-10" style={{fontSize: 52}}>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 mb-10" style={{fontSize: 52, lineHeight: 1.1,}}>
                         {project.name}
                       </h3>
                       <p className="text-gray-350 text-lg my-7 leading-relaxed" style={{ color: '#b3b3b3'}}>

@@ -85,7 +85,7 @@ const ClientsSection = ({ clients: propClients }: ClientsSectionProps) => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="card-dark p-6 w-full h-full flex flex-col items-center justify-center group-hover:border-[#32e4b6]/50 transition-colors duration-300">
+                  <div className="bg-black rounded-lg p-6 w-full h-full flex flex-col items-center justify-center group-hover:border-[#32e4b6]/50 transition-colors duration-300">
                     {client.image ? (
                       <img 
                         src={client.image} 

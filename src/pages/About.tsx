@@ -98,13 +98,12 @@ const About = () => {
                   ACHIEVEMENTS
                 </p>
                 <h2
-                  className="mb-0 pb-0"
+                  className="mb-0 pb-0 text-4xl md:text-6xl"
                   style={{
                     color: '#fff',
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '64px',
                     fontWeight: 600,
-                    lineHeight: '64px',
+                    lineHeight: '1.1',
                     textAlign: 'left',
                     textTransform: 'capitalize',
                   }}
@@ -112,12 +111,11 @@ const About = () => {
                   Awards
                 </h2>
                 <h2
-                  className='text-[#32e4b6]'
+                  className="text-[#32e4b6] text-4xl md:text-6xl"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '64px',
                     fontWeight: 600,
-                    lineHeight: '64px',
+                    lineHeight: '1.1',
                     textAlign: 'left',
                     textTransform: 'capitalize',
                   }}

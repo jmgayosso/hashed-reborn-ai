@@ -106,7 +106,7 @@ interface TimelineItemProps {
  */
 const TimelineItem: React.FC<TimelineItemProps> = ({ icon: Icon, title, description, year }) => {
   return (
-    <div className="bg-black text-white p-6 md:p-8 rounded-2xl shadow-xl border border-[#1a1a1a] mb-6 last:mb-0">
+    <div className="bg-black text-white p-6 md:p-8 rounded-2xl shadow-xl border border-[#222] mb-6 last:mb-0">
       <div className="flex items-start space-x-6 md:space-x-8">
         {/* Icon Container */}
         <div className="flex-shrink-0 w-16 h-16 md:w-15 md:h-15 bg-[#DFFF70] rounded-full flex items-center justify-center">

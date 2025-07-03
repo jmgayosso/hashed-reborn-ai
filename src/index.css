@@ -57,7 +57,7 @@
   }
   
   .card-dark {
-    @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg;
+    @apply bg-[#222] border border-[#2a2a2a] rounded-lg;
   }
 
   .nav-link {

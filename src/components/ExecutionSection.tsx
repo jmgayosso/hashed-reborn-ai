@@ -103,7 +103,7 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
             {getCurrentSlideTestimonials().map((testimonial, index) => (
               <motion.div
                 key={`${currentIndex}-${index}`}
-                className="bg-[#1a1a1a] rounded-2xl p-8 border border-gray-800"
+                className="bg-[#222] rounded-2xl p-8 border border-gray-800"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

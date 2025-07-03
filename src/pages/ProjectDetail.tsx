@@ -143,7 +143,7 @@ const ProjectDetail = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="prose prose-invert prose-lg max-w-none"
             >
-              <div className="bg-[#1a1a1a] rounded-2xl border border-gray-800 p-8 md:p-12 text-gray-300">
+              <div className="bg-[#222] rounded-2xl border border-gray-800 p-8 md:p-12 text-gray-300">
                 <ReactMarkdown
                   components={{
                     h1: ({children}) => <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">{children}</h1>,

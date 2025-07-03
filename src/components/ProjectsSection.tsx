@@ -81,7 +81,7 @@ const ProjectsSection = () => {
                 className="sticky top-24 mb-8"
               >
                 <Link to={`/projects/${project.id}`}>
-                  <div className="bg-[#1a1a1a] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-colors duration-300">
+                  <div className="bg-[#222] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-colors duration-300">
                   <div className="grid lg:grid-cols-2 gap-0">
                     <div className="relative h-80 lg:h-96">
                       <img 
