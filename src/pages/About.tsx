@@ -12,17 +12,6 @@ const About = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, []);
-  
-  const clients = [
-    { name: "BitCash", logo: "$", image: "/images/clients/bitcash.svg" },
-    { name: "PRXY", logo: "PRXY", image: "/images/clients/citi.svg" },
-    { name: "Citi", logo: "citi", image: "/images/clients/credit.svg" },
-    { name: "SPS Commerce", logo: "SPS", image: "/images/clients/diamon.svg" },
-    { name: "Hypho", logo: "Hypho", image: "/images/clients/hancock.svg" },
-    { name: "Credit Suisse", logo: "CS", image: "/images/clients/hypha.svg" },
-    { name: "Diamond Standard", logo: "◊", image: "/images/clients/prxy.svg" },
-    { name: "Snowflake", logo: "❄", image: "/images/clients/seeds.svg" }
-  ];
 
   return (
     <div className="min-h-screen bg-black">
@@ -149,7 +138,7 @@ const About = () => {
             </motion.div>
           </div>
           <div className="mt-24">
-            <ClientsSection clients={clients} />
+            <ClientsSection />
           </div>
           <CTASection />
         </div>

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import HashedIcon from '@/assets/images/hashedIcon.svg'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ const Navigation = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/">
-                <img src='/images/hashedIcon.svg' className="hashed-icon"/>
+                <img src={HashedIcon} className="hashed-icon"/>
               </Link>
             </div>
           </div>

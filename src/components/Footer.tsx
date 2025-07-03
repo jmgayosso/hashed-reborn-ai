@@ -1,6 +1,7 @@
 
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import HashedIcon from '@/assets/images/hashedIcon.svg'
 
 const Footer = () => {
   const location = useLocation();
@@ -25,7 +26,7 @@ const Footer = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <Link to="/">
-                  <img src='/images/hashedIcon.svg' className="hashed-icon"/>
+                  <img src={HashedIcon} className="hashed-icon"/>
                 </Link>
               </div>
             </div>
@@ -44,13 +45,13 @@ const Footer = () => {
                 className={`nav-link ${isActive('/about') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
               >
                 About
+                </Link>
+              <Link 
+                to="/products" 
+                className={`nav-link ${isActive('/products') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
+                >
+                  Products
               </Link>
-              <a 
-                href="#products" 
-                className="nav-link text-[#b3b3b3] font-inter text-[17px] font-light leading-6 text-center"
-              >
-                Products
-              </a>
               <Link 
                 to="/projects" 
                 className={`nav-link ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}

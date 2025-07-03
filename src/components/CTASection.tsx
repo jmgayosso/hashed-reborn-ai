@@ -1,6 +1,7 @@
 
 import { ArrowRight } from 'lucide-react';
 import ArrowWhitCurve from '@/assets/icons/arrow_with_curve.svg'
+import BG1 from '@/assets/images/bg1.jpg'
 
 const CTASection = () => {
   return (
@@ -9,7 +10,7 @@ const CTASection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{
-          backgroundImage: `url('/images/bg1.jpg')`
+          backgroundImage: `url(${BG1})`
         }}
       ></div>
       

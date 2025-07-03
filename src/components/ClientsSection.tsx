@@ -1,6 +1,15 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import bitcashImg from '@/assets/clients/bitcash.svg';
+import prxyImg from '@/assets/clients/citi.svg';
+import citiImg from '@/assets/clients/credit.svg';
+import spsImg from '@/assets/clients/diamon.svg';
+import hyphoImg from '@/assets/clients/hancock.svg';
+import csImg from '@/assets/clients/hypha.svg';
+import diamondImg from '@/assets/clients/prxy.svg';
+import snowflakeImg from '@/assets/clients/seeds.svg';
+
 
 interface Client {
   name: string;
@@ -14,15 +23,14 @@ interface ClientsSectionProps {
 
 const ClientsSection = ({ clients: propClients }: ClientsSectionProps) => {
   const defaultClients: Client[] = [
-    { name: "BitCash", logo: "$", image: "/images/clients/bitcash" },
-    { name: "PRXY", logo: "PRXY", image: "/images/clients/citi" },
-    { name: "Citi", logo: "citi", image: "/images/clients/credit" },
-    { name: "SPS Commerce", logo: "SPS", image: "/images/clients/diamon" },
-    { name: "Hypho", logo: "Hypho", image: "/images/clients/hancock" },
-    { name: "Credit Suisse", logo: "CS", image: "/images/clients/hypha" },
-    { name: "Diamond Standard", logo: "◊", image: "/images/clients/prxy" },
-    { name: "Snowflake", logo: "❄", image: "/images/clients/seeds" },
-    { name: "Microsoft", logo: "MS", image: "/images/clients/un" }
+    { name: "BitCash", logo: "$", image: bitcashImg },
+    { name: "PRXY", logo: "PRXY", image: prxyImg },
+    { name: "Citi", logo: "citi", image: citiImg },
+    { name: "SPS Commerce", logo: "SPS", image: spsImg },
+    { name: "Hypho", logo: "Hypho", image: hyphoImg },
+    { name: "Credit Suisse", logo: "CS", image: csImg },
+    { name: "Diamond Standard", logo: "◊", image: diamondImg },
+    { name: "Snowflake", logo: "❄", image: snowflakeImg }
   ];
 
   const clients = propClients || defaultClients;
