@@ -9,6 +9,7 @@ import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
 import { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import bgContact from '@/assets/images/bgContact.jpg'
 
 const Contact = () => {
   useEffect(() => {
@@ -93,8 +94,7 @@ const Contact = () => {
                 <div
                   className="relative z-10 text-center w-full h-full flex items-end justify-center rounded-3xl p-10"
                   style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, rgba(0,0,0,0), black 90%), url(https://cdn.prod.website-files.com/65d4ed6d925bb1886eaebbc4/662fc06402c4c408808e7506_Background%20pattern%20photo.jpg)",
+                    backgroundImage:`linear-gradient(180deg, rgba(0,0,0,0), black 90%), url(${bgContact})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}

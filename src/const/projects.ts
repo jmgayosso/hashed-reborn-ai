@@ -15,7 +15,7 @@ const projects: ProjectItem[] = [
  {
     id: 2,
     name: 'Polkadot',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/664eaf49090ea339e8a86038_charlesdeluvio-OWkXt1ikC5g-unsplash%20(2).jpg',
+    image: 'images/projects/polkadotProj.jpg',
     projectSummary: 'Using LLMs as onboarding and governance tools',
     client: 'Polkadot-Polkassembly',
     projectDetails: './projectDescriptions/polkadot.md',
@@ -26,7 +26,7 @@ const projects: ProjectItem[] = [
  {
     id: 3,
     name: 'Top 3 Global Bank',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/66477376405fdeefbea584ed_White%20chess%20game%20set.jpg',
+    image: 'images/projects/top3GlobalProj.jpg',
     projectSummary: 'Making sense of chaos with AI',
     client: '',
     projectDetails: './projectDescriptions/top3GlobalBank.md',
@@ -36,7 +36,7 @@ const projects: ProjectItem[] = [
  {
     id: 4,
     name: 'Smart Vaults',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/663d2435ba97d3f3e64c2df5_Grey%20Door%20Knob.jpg',
+    image: 'images/projects/smartVaultsProj.jpg',
     projectSummary: 'Smart Bitcoin wallet wtih taproot miniscript',
     client: '',
     projectDetails: './projectDescriptions/smartVults.md',
@@ -47,7 +47,7 @@ const projects: ProjectItem[] = [
  {
     id: 5,
     name: 'Hypha',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/663d20ac702ef4d29dfd911b_Rainbow%20color%20chain%20on%20brown%20surface.jpg',
+    image: 'images/projects/hyphaProj.jpg',
     projectSummary: 'DAO platform for regenerative projects',
     client: 'Hypha',
     projectDetails: './projectDescriptions/hypha.md',
@@ -57,7 +57,7 @@ const projects: ProjectItem[] = [
  {
     id: 6,
     name: 'S&K',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/663d1eb5666db633b67d4871_MacBook%20Pro%20by%20Austin%20Distel.jpg',
+    image: 'images/projects/s&kProj.jpg',
     projectSummary: 'Modern investment due diligence for brokers.',
     client: "Snyder Kearney's",
     projectDetails: './projectDescriptions/s&k.md',
@@ -67,7 +67,7 @@ const projects: ProjectItem[] = [
  {
     id: 7,
     name: 'BennyFi',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/663d1df3d75f23debf4537f8_Green%20plant%20on%20round%20coins.jpg',
+    image: 'images/projects/bennyProj.jpg',
     projectSummary: 'Pledge the Yield, not the Principal',
     client: 'BennyFi',
     projectDetails: './projectDescriptions/bennyFi.md',
@@ -77,7 +77,7 @@ const projects: ProjectItem[] = [
  {
     id: 8,
     name: 'PRXY',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/663d1ec1b8d738b7b54c342d_Cityscape%20High%20Rise.jpg',
+    image: 'images/projects/prxyProj.jpg',
     projectSummary: 'The best solution for EB-5 compliance',
     client: 'PRXY Co',
     projectDetails: './projectDescriptions/prxy.md',
@@ -87,7 +87,7 @@ const projects: ProjectItem[] = [
  {
     id: 9,
     name: 'Software Solution',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/65d4ed6e925bb1886eaebc6b_652428d9350f46943be61ba1_Wall-Hanging-Poster.jpeg',
+    image: 'images/projects/softwareSolutionProj.jpeg',
     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     client: 'Bryan Hennesy',
     projectDetails: './projectDescriptions/lorem.md',
@@ -97,7 +97,7 @@ const projects: ProjectItem[] = [
  {
     id: 10,
     name: 'Digital Marketing',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/65d4ed6e925bb1886eaebc74_6524c04b704715d59d9b1ef9_Book-Box.jpeg',
+    image: 'images/projects/digitalMarketingProj.jpeg',
     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     client: 'Digital Capita',
     projectDetails: './projectDescriptions/lorem.md',
@@ -107,7 +107,7 @@ const projects: ProjectItem[] = [
  {
     id: 11,
     name: 'Marketing Strategy',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/65d4ed6e925bb1886eaebc73_6524c05d741496aac0351330_Plastic-Pouch.jpeg',
+    image: 'images/projects/marketingStrategyProj.jpeg',
     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     client: 'Mutil-Digital Capita',
     projectDetails: './projectDescriptions/lorem.md',
@@ -117,7 +117,7 @@ const projects: ProjectItem[] = [
  {
     id: 12,
     name: 'Website Redesign',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/65d4ed6e925bb1886eaebc75_6524289bb56df634494a2207_Vinyl.jpeg',
+    image: 'images/projects/websiteRedesignProj.jpeg',
     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     client: 'Will Walters',
     projectDetails: './projectDescriptions/lorem.md',
@@ -127,7 +127,7 @@ const projects: ProjectItem[] = [
  {
     id: 13,
     name: 'Brand Identity',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/65d4ed6e925bb1886eaebc72_652428cf091c960dbb34ddef_iPhone-14-Pro.jpeg',
+    image: 'images/projects/brandIdentityProj.jpeg',
     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     client: 'Bryan Hennesy',
     projectDetails: './projectDescriptions/lorem.md',
@@ -137,7 +137,7 @@ const projects: ProjectItem[] = [
  {
     id: 14,
     name: 'Development',
-    image: 'https://cdn.prod.website-files.com/65d4ed6e925bb1886eaebc57/65d4ed6e925bb1886eaebc70_652428b898a7708967d0a1d1_Boards-Environment.jpeg',
+    image: 'images/projects/developmentProj.jpeg',
     projectSummary: 'The best solution for EB-5 compliance',
     client: 'Will Walters',
     projectDetails: './projectDescriptions/lorem.md',
