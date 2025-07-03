@@ -4,6 +4,7 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const [ init, setInit ] = useState(false);
@@ -152,7 +153,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                TELL US YOUR IDEA
+                <Link to="/contact">
+                  TELL US YOUR IDEA
+                </Link>
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}

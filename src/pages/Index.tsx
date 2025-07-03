@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react'
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import ClientsSection from '@/components/ClientsSection';
@@ -10,6 +11,9 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-black">

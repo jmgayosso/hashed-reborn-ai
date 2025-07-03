@@ -2,6 +2,7 @@
 import { ArrowRight } from 'lucide-react';
 import ArrowWhitCurve from '@/assets/icons/arrow_with_curve.svg'
 import BG1 from '@/assets/images/bg1.jpg'
+import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   return (
@@ -73,7 +74,9 @@ const CTASection = () => {
             textTransform: 'uppercase',
           }}
         >
-          TELL US ABOUT YOUR IDEA
+          <Link to="/contact">
+            TELL US ABOUT YOUR IDEA
+          </Link>
           <img
             src={ArrowWhitCurve}
           />
