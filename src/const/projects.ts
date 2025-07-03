@@ -1,5 +1,7 @@
 import { ProjectItem } from '@/interfaces'
 
+import polkadotDescription from '@/const/projectDescriptions/polkadot.md'
+
 const projects: ProjectItem[] = [
 //  {
 //     id: 1,
@@ -18,7 +20,8 @@ const projects: ProjectItem[] = [
     image: 'images/projects/polkadotProj.jpg',
     projectSummary: 'Using LLMs as onboarding and governance tools',
     client: 'Polkadot-Polkassembly',
-    projectDetails: './projectDescriptions/polkadot.md',
+    projectDetails: polkadotDescription,
+   //  projectDetails: './projectDescriptions/polkadot.md',
     completedDate: '',
     services: ['AI'],
 
