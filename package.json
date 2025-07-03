@@ -9,7 +9,8 @@
         "build:dev": "vite build --mode development",
         "lint": "eslint .",
         "preview": "vite preview",
-        "deploy": "vite build && npx gh-pages -d dist"
+        "deploy": "vite build && npx gh-pages -d dist",
+        "deployPages": "gh-pages -d dist"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.9.0",
