@@ -10,11 +10,11 @@ const Hero = () => {
     const [ init, setInit ] = useState(false);
 
     useEffect(() => {
-        // initParticlesEngine(async (engine) => {
-        //     await loadSlim(engine);
-        // }).then(() => {
-        //     setInit(true);
-        // });
+      // initParticlesEngine(async (engine) => {
+      //     await loadSlim(engine);
+      // }).then(() => {
+      //     setInit(true);
+      // });
     }, []);
 
   return (
@@ -119,8 +119,12 @@ const Hero = () => {
             >
               SOLVE OLD
               <br />
-              <span className="text-[#32e4b6] relative">
+              <span className="text-white relative">
                 PROBLEMS
+              </span>
+              <br />
+              <span className="text-[#32e4b6] relative">
+                NEW WAYS
                 <motion.div
                   className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#32e4b6] to-transparent"
                   initial={{ scaleX: 0 }}
@@ -128,12 +132,11 @@ const Hero = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                 />
               </span>
-              <br />
-              <span className="text-white mt-5 inline-block">NEW WAYS</span>
+              {/* <span className="text-white mt-5 inline-block">NEW WAYS</span> */}
             </motion.h1>
 
             <motion.p 
-              className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed mt-10"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
