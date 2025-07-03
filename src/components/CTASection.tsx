@@ -63,24 +63,25 @@ const CTASection = () => {
           TOGETHER
         </h2>
         
-        <button
-          className="btn-primary inline-flex items-center gap-2 text-lg"
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '15px',
-            fontWeight: 500,
-            lineHeight: '15px',
-            textAlign: 'center',
-            textTransform: 'uppercase',
-          }}
-        >
-          <Link to="/contact">
-            TELL US ABOUT YOUR IDEA
-          </Link>
-          <img
-            src={ArrowWhitCurve}
-          />
-        </button>
+        <Link to="/contact">
+          <button
+            className="btn-primary inline-flex items-center gap-2 text-lg"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '15px',
+              fontWeight: 500,
+              lineHeight: '15px',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+            }}
+          >
+            
+              TELL US ABOUT YOUR IDEA
+            <img
+              src={ArrowWhitCurve}
+            />
+          </button>
+        </Link>
       </div>
     </section>
   );

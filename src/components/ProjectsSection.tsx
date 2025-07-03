@@ -171,24 +171,26 @@ const ProjectsSection = () => {
         </div>
         
         <div className="text-center mt-16">
-          <button
-            className="btn-primary inline-flex items-center gap-2 px-8 py-4"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "15px",
-              fontWeight: 500,
-              lineHeight: "15px",
-              textAlign: "center",
-              textTransform: "uppercase"
-            }}
-          >
-            SEE ALL CASE STUDIES
-            <img
-              src={ArrowWhitCurve}
-              alt="Arrow"
-              className="h-7 w-7"
-            />
-          </button>
+          <Link to="/projects">
+            <button
+              className="btn-primary inline-flex items-center gap-2 px-8 py-4"
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "15px",
+                fontWeight: 500,
+                lineHeight: "15px",
+                textAlign: "center",
+                textTransform: "uppercase"
+              }}
+            >
+              SEE ALL CASE STUDIES
+              <img
+                src={ArrowWhitCurve}
+                alt="Arrow"
+                className="h-7 w-7"
+              />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
