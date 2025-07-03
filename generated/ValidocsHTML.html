@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validocs - Streamline Your Workflow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D0D0D;
+            /* Main dark background */
+            color: #E5E5E5;
+            /* Light gray text */
+        }
+
+        .valido_style_hashed-teal {
+            color: #00F0B5;
+        }
+
+        .valido_style_hashed-teal-bg {
+            background-color: #00F0B5;
+        }
+
+        .valido_style_hashed-teal-border {
+            border-color: #00F0B5;
+        }
+
+        .valido_style_hashed-card-bg {
+            background-color: #1A1A1A;
+            /* Darker gray for cards */
+        }
+
+        .valido_style_hero-bg-custom {
+            background-color: #0D0D0D;
+            /* Match body background */
+        }
+
+        .valido_style_section-bg-custom {
+            background-color: #121212;
+            /* Slightly lighter dark for section emphasis if needed, or keep same as body */
+        }
+
+        .valido_style_cta-button {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .valido_style_cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 240, 181, 0.1), 0 4px 6px -2px rgba(0, 240, 181, 0.05);
+        }
+
+        .valido_style_hashed-teal-cta {
+            background-color: #00F0B5;
+            color: #0D0D0D !important;
+            /* Dark text on teal button */
+            font-weight: 700;
+        }
+
+        .valido_style_hashed-teal-cta:hover {
+            color: #0D0D0D !important;
+            /* Dark text on teal button */
+            background-color: #00d8a3;
+            /* Slightly darker teal on hover */
+        }
+
+        .valido_style_feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .valido_style_feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(0, 240, 181, 0.07), 0 5px 10px -5px rgba(0, 240, 181, 0.04);
+        }
+
+        .valido_style_logo-placeholder {
+            font-weight: 800;
+            /* Bolder logo */
+            font-size: 1.85rem;
+            /* Slightly larger logo */
+            color: #FFFFFF;
+        }
+
+        .valido_style_nav-link {
+            color: #E5E5E5;
+            font-weight: 500;
+        }
+
+        .valido_style_nav-link:hover {
+            color: #00F0B5;
+        }
+
+        .valido_style_form-container-custom {
+            background-color: #FFFFFF;
+            /* Keep form on white bg for readability */
+            color: #1A1A1A;
+            /* Dark text for form content */
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            color: #1A1A1A;
+            /* Ensure input text is dark */
+            border-color: #D1D5DB;
+            /* Standard gray border */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #00F0B5;
+            box-shadow: 0 0 0 1px #00F0B5;
+        }
+
+        .valido_style_heading-text-main {
+            color: #FFFFFF;
+            font-weight: 800;
+        }
+
+        .valido_style_heading-text-sub {
+            color: #E5E5E5;
+            /* Light gray for subheadings/body */
+        }
+
+        .valido_style_problem-icon-color {
+            color: #FF6B6B;
+            /* A softer red for dark backgrounds */
+        }
+
+        h3 {
+            text-transform: none
+        }
+
+        .container {
+            overflow: inherit
+        }
+
+        .customrequesthover:hover {
+            color: white !important
+        }
+
+        .logo-header-hashed {
+            width: 90px
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="bg-opacity-90 backdrop-blur-md fixed w-full z-50 top-0"
+        style="background-color: rgba(13, 13, 13, 0.8);">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="valido_style_logo-placeholder">Validocs</span>
+                <a href='https://hashed.one/home' target="_blank">
+                    <img src='https://cdn.prod.website-files.com/65d4ed6d925bb1886eaebbc4/65e7709795de694decef1831_Hashed_Logo_Flat_GreenWhite.svg'
+                        class='logo-header-hashed' />
+                </a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#features" class="valido_style_nav-link px-3 py-2 rounded-md text-sm">Features</a>
+                <a href="#use-cases" class="valido_style_nav-link px-3 py-2 rounded-md text-sm">Use Cases</a>
+                <a href="#benefits" class="valido_style_nav-link px-3 py-2 rounded-md text-sm">Benefits</a>
+                <a href="#contact"
+                    class="valido_style_hashed-teal-cta text-sm px-4 py-2 rounded-lg font-semibold valido_style_cta-button ml-2 customrequesthover">Request
+                    Demo</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <a href="#features" class="block valido_style_nav-link px-6 py-2 text-sm">Features</a>
+            <a href="#use-cases" class="block valido_style_nav-link px-6 py-2 text-sm">Use Cases</a>
+            <a href="#benefits" class="block valido_style_nav-link px-6 py-2 text-sm">Benefits</a>
+            <a href="#contact"
+                class="block valido_style_hashed-teal-cta text-sm px-6 py-2 rounded-lg font-semibold mx-4 mt-2 text-center">Request
+                Demo</a>
+        </div>
+    </nav>
+
+    <header class="valido_style_hero-bg-custom text-white pt-32 pb-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl valido_style_heading-text-main mb-6 leading-tight">
+                Stop Chasing Documents. Start <span class="valido_style_hashed-teal">Accelerating</span> Processes.
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto valido_style_heading-text-sub">
+                Our intelligent platform, Validocs, automates document collection, validation, and tracking, empowering
+                you to close deals, onboard clients, hire employees, and much more faster than ever before.
+            </p>
+            <a href="#contact"
+                class="valido_style_hashed-teal-cta py-4 px-10 rounded-lg text-lg valido_style_cta-button">
+                Request a Demo
+            </a>
+        </div>
+    </header>
+
+    <section id="problem" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl valido_style_heading-text-main text-center mb-6">The Document Bottleneck: Is
+                This Your Reality?</h2>
+            <p class="text-center valido_style_heading-text-sub mb-12 max-w-2xl mx-auto">Manual document handling is a
+                drain on resources, a source of errors, and a major roadblock to efficient operations.</p>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <svg class="w-16 h-16 valido_style_problem-icon-color mx-auto mb-4" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Wasted Time & Delays</h3>
+                    <p class="valido_style_heading-text-sub">Endless follow-ups, chasing missing paperwork, and manual
+                        data entry consume valuable employee hours, delaying critical business processes.</p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <svg class="w-16 h-16 valido_style_problem-icon-color mx-auto mb-4" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Costly Errors & Compliance
+                        Risks</h3>
+                    <p class="valido_style_heading-text-sub">Incorrect or incomplete documents lead to rework,
+                        compliance failures, and potential financial penalties.</p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <svg class="w-16 h-16 valido_style_problem-icon-color mx-auto mb-4" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                        <path
+                            d="M14.828 14.828a4 4 0 01-5.656 0M14.828 9.172a4 4 0 010 5.656M9.172 9.172a4 4 0 015.656 0">
+                        </path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Poor Client Experience</h3>
+                    <p class="valido_style_heading-text-sub">Complex and lengthy document submission processes frustrate
+                        clients, damaging relationships and potentially losing business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 md:py-24 valido_style_section-bg-custom">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl valido_style_heading-text-main text-center mb-4">Introducing <span
+                    class="valido_style_hashed-teal">Validocs</span>: Your Document Automation Powerhouse</h2>
+            <p class="text-center valido_style_heading-text-sub mb-12 max-w-2xl mx-auto">We transform document
+                collection from a manual chore into a streamlined, intelligent, and automated workflow.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 valido_style_hashed-teal mr-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold valido_style_heading-text-main">Automated Collection &
+                            Reminders</h3>
+                    </div>
+                    <p class="valido_style_heading-text-sub">Define required document sets and let Validocs
+                        automatically request them from clients and send intelligent, timely reminders. No more manual
+                        nagging.</p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 valido_style_hashed-teal mr-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                        <h3 class="text-xl font-semibold valido_style_heading-text-main">AI-Powered Validation</h3>
+                    </div>
+                    <p class="valido_style_heading-text-sub">Our AI analyzes submitted documents for authenticity,
+                        expiration dates, and completeness against your defined requirements, flagging issues instantly.
+                    </p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 valido_style_hashed-teal mr-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 012-2V8a2 2 0 01-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <h3 class="text-xl font-semibold valido_style_heading-text-main">Real-Time Status Tracking</h3>
+                    </div>
+                    <p class="valido_style_heading-text-sub">Gain complete visibility with a centralized dashboard.
+                        Track the status of each document (pending, submitted, valid, invalid with reasons) for every
+                        client or case.</p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 valido_style_hashed-teal mr-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                            </path>
+                        </svg>
+                        <h3 class="text-xl font-semibold valido_style_heading-text-main">Automated Alerts &
+                            Notifications</h3>
+                    </div>
+                    <p class="valido_style_heading-text-sub">Receive instant alerts when a document package is complete
+                        and validated, signaling that the core business process can proceed without delay.</p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 valido_style_hashed-teal mr-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <h3 class="text-xl font-semibold valido_style_heading-text-main">Workflow-Specific Focus</h3>
+                    </div>
+                    <p class="valido_style_heading-text-sub">Designed for structured document collection tied to
+                        specific business workflows, not as a general-purpose document storage system. Precision and
+                        efficiency with Validocs.</p>
+                </div>
+                <div class="valido_style_hashed-card-bg p-8 rounded-lg valido_style_feature-card">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-10 h-10 valido_style_hashed-teal mr-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
+                            </path>
+                        </svg>
+                        <h3 class="text-xl font-semibold valido_style_heading-text-main">Seamless Client Experience</h3>
+                    </div>
+                    <p class="valido_style_heading-text-sub">Clients can submit documents effortlessly by simply
+                        replying to an email. Our system processes incoming emails, analyzes attachments, and updates
+                        status automatically, reducing friction and improving satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="use-cases" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl valido_style_heading-text-main text-center mb-4">Powering Efficiency Across
+                Industries</h2>
+            <p class="text-center valido_style_heading-text-sub mb-12 max-w-2xl mx-auto">Validocs is versatile, designed
+                to meet the document-intensive needs of various sectors.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="valido_style_hashed-card-bg p-6 rounded-lg hover:shadow-xl transition-shadow valido_style_feature-card">
+                    <h3 class="text-xl font-semibold mb-3 valido_style_hashed-teal">Financial Services & Real Estate
+                    </h3>
+                    <p class="valido_style_heading-text-sub">Streamline loan/credit applications and real estate
+                        transactions by ensuring all required financial statements, IDs, and property documents are
+                        collected and validated swiftly.</p>
+                </div>
+                <div
+                    class="valido_style_hashed-card-bg p-6 rounded-lg hover:shadow-xl transition-shadow valido_style_feature-card">
+                    <h3 class="text-xl font-semibold mb-3 valido_style_hashed-teal">Human Resources</h3>
+                    <p class="valido_style_heading-text-sub">Simplify employee onboarding for large employers and
+                        staffing agencies by automating the collection of contracts, tax forms, and identification
+                        documents.</p>
+                </div>
+                <div
+                    class="valido_style_hashed-card-bg p-6 rounded-lg hover:shadow-xl transition-shadow valido_style_feature-card">
+                    <h3 class="text-xl font-semibold mb-3 valido_style_hashed-teal">Client Onboarding & KYC</h3>
+                    <p class="valido_style_heading-text-sub">Ensure compliance (AML, KYC) in Financial Services,
+                        Fintech, and Legal by efficiently collecting and verifying identification, proof of address, and
+                        other regulatory documents.</p>
+                </div>
+                <div
+                    class="valido_style_hashed-card-bg p-6 rounded-lg hover:shadow-xl transition-shadow valido_style_feature-card">
+                    <h3 class="text-xl font-semibold mb-3 valido_style_hashed-teal">Insurance</h3>
+                    <p class="valido_style_heading-text-sub">Accelerate claims processing by automating the collection
+                        of claim forms, incident reports, photographic evidence, and supporting documentation.</p>
+                </div>
+                <div
+                    class="valido_style_hashed-card-bg p-6 rounded-lg hover:shadow-xl transition-shadow valido_style_feature-card col-span-1 md:col-span-2 lg:col-span-1 lg:col-start-2">
+                    <h3 class="text-xl font-semibold mb-3 valido_style_hashed-teal">And More...</h3>
+                    <p class="valido_style_heading-text-sub">Any process bottlenecked by collecting specific document
+                        sets can benefit from Validocs' intelligent automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="py-16 md:py-24 valido_style_section-bg-custom">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl valido_style_heading-text-main text-center mb-12">Unlock Tangible Business
+                Benefits with Validocs</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div
+                        class="valido_style_hashed-teal-bg text-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        ✓</div>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Drastically Reduce Turnaround
+                        Times</h3>
+                </div>
+                <div>
+                    <div
+                        class="valido_style_hashed-teal-bg text-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        ✓</div>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Minimize Errors & Rework</h3>
+                </div>
+                <div>
+                    <div
+                        class="valido_style_hashed-teal-bg text-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        ✓</div>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Enhance Compliance & Security
+                    </h3>
+                </div>
+                <div>
+                    <div
+                        class="valido_style_hashed-teal-bg text-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        ✓</div>
+                    <h3 class="text-xl font-semibold mb-2 valido_style_heading-text-main">Improve Client Satisfaction
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 valido_style_hero-bg-custom">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl valido_style_heading-text-main mb-6">Ready to Revolutionize Your Document
+                Workflows with <span class="valido_style_hashed-teal">Validocs</span>?</h2>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto valido_style_heading-text-sub">
+                Discover how Validocs can save you time, reduce costs, and improve efficiency. Schedule a personalized
+                demo with our experts today.
+            </p>
+            <div class="max-w-md mx-auto valido_style_form-container-custom p-8 rounded-lg shadow-2xl">
+                <h3 class="text-xl font-semibold mb-6 text-gray-900">Request Your Free Demo</h3>
+                <form id="validocsDemoRequestForm" method="POST" action="https://formspree.io/f/myzjwegg">
+                    <div class="mb-4">
+                        <label for="validocs-name" class="block text-sm font-medium text-gray-700 text-left">Full
+                            Name</label>
+                        <input type="text" name="name" id="validocs-name" required
+                            class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm">
+                    </div>
+                    <div class="mb-4">
+                        <label for="validocs-email" class="block text-sm font-medium text-gray-700 text-left">Work
+                            Email</label>
+                        <input type="email" name="email" id="validocs-email" required
+                            class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm">
+                    </div>
+                    <div class="mb-6">
+                        <label for="validocs-company" class="block text-sm font-medium text-gray-700 text-left">Company
+                            Name</label>
+                        <input type="text" name="company" id="validocs-company"
+                            class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm">
+                    </div>
+                    <button type="submit"
+                        class="w-full valido_style_hashed-teal-cta font-bold py-3 px-6 rounded-lg text-lg valido_style_cta-button">
+                        Schedule Demo
+                    </button>
+                </form>
+                <div id="formMessage" class="mt-4 text-sm"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId.length > 1 && document.querySelector(targetId)) {
+                    const navbarHeight = document.querySelector('nav').offsetHeight ||
+                        70; // Adjusted default
+                    const targetElement = document.querySelector(targetId);
+                    const targetPosition = targetElement.getBoundingClientRect().top + window
+                        .pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Set current year in footer
+        //        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Handle Demo Request Form Submission
+        const demoForm = document.getElementById('validocsDemoRequestForm');
+        const formMessage = document.getElementById('formMessage');
+
+        console.log('demoForm', demoForm)
+
+        if (demoForm) {
+            demoForm.addEventListener('submit', async function (event) { // Added 'async' keyword
+                event.preventDefault();
+
+                const nameInput = document.getElementById('validocs-name');
+                const emailInput = document.getElementById('validocs-email');
+                const companyInput = document.getElementById('validocs-company');
+
+                const name = nameInput.value;
+                const email = emailInput.value;
+                const company = companyInput.value;
+
+                if (!name || !email) {
+                    formMessage.textContent = 'Please fill in all required fields.';
+                    formMessage.className = 'mt-4 text-sm text-red-600 text-left';
+                    return;
+                }
+                if (!/^\S+@\S+\.\S+$/.test(email)) {
+                    formMessage.textContent = 'Please enter a valid email address.';
+                    formMessage.className = 'mt-4 text-sm text-red-600 text-left';
+                    return;
+                }
+
+                // Construct email subject and HTML body based on your style guide
+                const emailSubject = `VALIDOCS - Solicitud de Demo: ${name} (${company || 'N/A'})`;
+
+                const emailTextBody = `
+                    ¡Nueva Solicitud de Demo!
+
+                    Un usuario ha solicitado una demostración gratuita de Validocs con la siguiente información:
+
+                    Nombre: ${name}
+                    Email: ${email}
+                    Compañía: ${company || 'No proporcionado'}
+
+                    Por favor, contacta al usuario lo antes posible para coordinar la demo.
+                    `;
+
+                console.log(JSON.stringify({
+                    name: name,
+                    email: email,
+                    company: company,
+                    _subject: emailSubject, // Formspree uses _subject for custom subject line
+                    _html: emailTextBody // Custom field to send the HTML body
+                }))
+
+                try {
+                    formMessage.textContent = 'Sending...';
+                    formMessage.className = 'mt-4 text-sm text-gray-400 text-left';
+
+                    const response = await fetch(demoForm
+                        .action, { // Use the 'action' attribute from the form
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json', // Indicate sending JSON
+                                'Accept': 'application/json' // Tell Formspree we expect JSON back
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                email: email,
+                                company: company,
+                                _subject: emailSubject, // Formspree uses _subject for custom subject line
+                                _html: emailTextBody // Custom field to send the HTML body
+                            }),
+                        });
+
+                    if (response.ok) {
+                        formMessage.textContent =
+                            "Thanks! We'll be in touch shortly to schedule your demo.";
+                        formMessage.className = 'mt-4 text-sm text-green-600 text-left';
+                        demoForm.reset();
+                    } else {
+                        const data = await response.json();
+                        let errorMessage = 'There was an error submitting your request. Please try again.';
+                        if (data.errors && data.errors.length > 0) {
+                            errorMessage += ' Detalles: ' + data.errors.map(err => err.message).join(', ');
+                        } else if (data.error) {
+                            errorMessage += ' Detalles: ' + data.error;
+                        }
+                        formMessage.textContent = errorMessage;
+                        formMessage.className = 'mt-4 text-sm text-red-600 text-left';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    formMessage.textContent =
+                        'There was a connection error. Please check your internet connection and try again.';
+                    formMessage.className = 'mt-4 text-sm text-red-600 text-left';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
