@@ -5,6 +5,7 @@ import jhonAvatar from '@/assets/screenshots/John Wotherspoon-p-500.jpeg'
 import connorAvatar from '@/assets/screenshots/connorIrish.png'
 import junAvatar from '@/assets/screenshots/jun.jpg'
 import louiseAvatar from '@/assets/screenshots/Louise.png'
+import quotesIcon from '@/assets/icons/quotes.svg'
 interface Testimonial {
   quote: string;
   author: string;
@@ -110,7 +111,7 @@ const ExecutionSection = ({ testimonials: propTestimonials }: ExecutionSectionPr
                 {/* Quote Icon */}
                 {/* <div className="text-[#32e4b6] text-6xl font-bold mb-6 leading-none">"</div> */}
                 <div className="flex justify-center mb-6">
-                  <img src='/images/icons/quotes.svg' style={{ maxWidth: '45px' }} />
+                  <img src={quotesIcon} style={{ maxWidth: '45px' }} />
                 </div>
                 
                 {/* Quote Text */}
