@@ -21,7 +21,7 @@ const Projects = () => {
       <main className="pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-start mb-24 mt-24 border-b border-[#32e4b6]">
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
               PROJECTS
             </h1>
@@ -53,19 +53,28 @@ const Projects = () => {
                     
                     {/* Project Content */}
                     <div className="p-8">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 mb-10" style={{fontSize: 52}}>
                         {project.name}
                       </h3>
-                      <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                      <p className="text-gray-350 text-lg mb-6 leading-relaxed" style={{ color: '#b3b3b3'}}>
                         {project.projectSummary}
                       </p>
                       
                       {/* Tags */}
                       <div className="flex gap-3 flex-wrap">
                         {project.services.map((tag, tagIndex) => (
-                          <span 
+                          <span
                             key={tagIndex}
-                            className="px-4 py-2 border border-gray-600 rounded-full text-white text-sm font-medium hover:border-[#32e4b6] transition-colors"
+                            className="px-4 py-2 border border-gray-600 rounded-full text-sm font-medium hover:border-[#32e4b6] transition-colors"
+                            style={{
+                              color: '#fff',
+                              fontFamily: 'Inter, sans-serif',
+                              fontSize: '14px',
+                              letterSpacing: '4px',
+                              lineHeight: '14px',
+                              textAlign: 'center',
+                              textTransform: 'uppercase',
+                            }}
                           >
                             {tag}
                           </span>

@@ -1,5 +1,6 @@
 
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const location = useLocation();
@@ -9,7 +10,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black border-t border-[#2a2a2a] py-12">
+  <motion.div
+    key={1}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.1 }}
+    viewport={{ once: true, amount: 0.5 }}
+    className="group cursor-pointer"
+    >
+      <footer className="bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
@@ -58,13 +67,14 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-[#2a2a2a] mt-8 pt-8">
+        <div className="border-t border-[#32e4b6] mt-8 pt-8">
           <p className="text-gray-500 text-center font-inter">
             © 2025 Hashed. All Rights Reserved.
           </p>
         </div>
       </div>
-    </footer>
+      </footer>
+    </motion.div>
   );
 };
 
