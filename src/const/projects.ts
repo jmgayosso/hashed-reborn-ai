@@ -52,7 +52,7 @@ const projects: ProjectItem[] = [
     client: 'Hypha',
     projectDetails: './projectDescriptions/hypha.md',
     completedDate: '',
-    services: [],
+    services: ['VUE', 'DESIGN', 'BLOKCHAIN'],
  },
  {
     id: 6,

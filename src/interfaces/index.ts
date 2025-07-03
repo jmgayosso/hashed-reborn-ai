@@ -1,3 +1,4 @@
 import ProjectItem from "@/interfaces/ProjectItem";
+import ProductItem from "@/interfaces/ProductItem";
 
-export type { ProjectItem }
+export type { ProjectItem, ProductItem }

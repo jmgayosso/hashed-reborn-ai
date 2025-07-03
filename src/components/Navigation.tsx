@@ -62,11 +62,11 @@ const Navigation = () => {
               >
                 ABOUT
               </Link>
-              <a 
-                href="#products" 
-                className="font-inter uppercase transition-colors text-white"
+              <Link 
+                to="/products" 
+                className={`font-inter uppercase transition-colors ${isActive('/about') ? 'text-[#32e4b6]' : 'text-white'}`}
                 style={{
-                  color: '#fff',
+                  color: isActive('/products') ? '#32e4b6' : '#fff',
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '15px',
                   fontWeight: 300,
@@ -77,7 +77,7 @@ const Navigation = () => {
                 }}
               >
                 PRODUCTS
-              </a>
+              </Link>
               <Link 
                 to="/projects" 
                 className={`font-inter uppercase transition-colors ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-white'}`}

@@ -4,15 +4,15 @@ import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ProjectList from '@/const/projects';
-import { ProjectItem } from '@/interfaces';
+import ProductsList from '@/const/products';
+import { ProductItem } from '@/interfaces';
 
 const Projects = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, []);
   
-  const projectList: ProjectItem[] = ProjectList;
+  const productsList: ProductItem[] = ProductsList;
 
   return (
     <div className="min-h-screen bg-black">
@@ -23,13 +23,13 @@ const Projects = () => {
           {/* Header */}
           <div className="text-start mb-24 mt-24 border-b border-[#32e4b6]">
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
-              PROJECTS
+              PRODUCTS
             </h1>
           </div>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projectList.map((project, index) => (
+            {productsList.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
-                <Link to={`/projects/${project.id}`}>
+                <Link to={`/products/${project.redirectTo}`}>
                   <div className="bg-[#1a1a1a] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-all duration-300">
                     {/* Project Image */}
                     <div className="relative h-64 overflow-hidden">
@@ -57,7 +57,7 @@ const Projects = () => {
                         {project.name}
                       </h3>
                       <p className="text-gray-350 text-lg my-7 leading-relaxed" style={{ color: '#b3b3b3'}}>
-                        {project.projectSummary}
+                        {project.productSummary}
                       </p>
                       
                       {/* Tags */}

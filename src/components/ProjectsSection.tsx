@@ -1,53 +1,51 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ArrowWhitCurve from '@/assets/icons/arrow_with_curve.svg'
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-}
+import { ProjectItem } from '@/interfaces';
+import ProjectList from '@/const/projects';
 
 const ProjectsSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const projectList: ProjectItem[] = ProjectList.filter(p => [3, 4, 5].includes(p.id))
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "TOP 3 GLOBAL BANK",
-      description: "Making sense of chaos with AI",
-      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=600&h=400&fit=crop",
-      tags: ["AI", "ANALYTICS"]
-    },
-    {
-      id: 2,
-      title: "FINTECH REVOLUTION",
-      description: "Transforming digital payments worldwide",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-      tags: ["BLOCKCHAIN", "PAYMENTS"]
-    },
-    {
-      id: 3,
-      title: "SMART CONTRACTS PLATFORM",
-      description: "Decentralized finance infrastructure",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
-      tags: ["DEFI", "SMART CONTRACTS"]
-    },
-    {
-      id: 4,
-      title: "AI TRADING SYSTEM",
-      description: "Automated trading with machine learning",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
-      tags: ["AI", "TRADING"]
-    }
-  ];
+  // const projects: ProjectItem[] = [
+  //   {
+  //     id: 1,
+  //     title: "TOP 3 GLOBAL BANK",
+  //     description: "Making sense of chaos with AI",
+  //     image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=600&h=400&fit=crop",
+  //     tags: ["AI", "ANALYTICS"]
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "FINTECH REVOLUTION",
+  //     description: "Transforming digital payments worldwide",
+  //     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+  //     tags: ["BLOCKCHAIN", "PAYMENTS"]
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "SMART CONTRACTS PLATFORM",
+  //     description: "Decentralized finance infrastructure",
+  //     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
+  //     tags: ["DEFI", "SMART CONTRACTS"]
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "AI TRADING SYSTEM",
+  //     description: "Automated trading with machine learning",
+  //     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
+  //     tags: ["AI", "TRADING"]
+  //   }
+  // ];
 
   return (
     <section ref={containerRef} className="py-20 relative">
@@ -59,7 +57,7 @@ const ProjectsSection = () => {
         </div>
         
         <div className="relative">
-          {projects.map((project, index) => {
+          {projectList.map((project, index) => {
             const y = useTransform(
               scrollYProgress,
               [0, 1],
@@ -78,16 +76,17 @@ const ProjectsSection = () => {
                 style={{ 
                   y: index === 0 ? 0 : y,
                   scale,
-                  zIndex: projects.length + index
+                  zIndex: projectList.length + index
                 }}
                 className="sticky top-24 mb-8"
               >
-                <div className="bg-[#1a1a1a] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-colors duration-300">
+                <Link to={`/projects/${project.id}`}>
+                  <div className="bg-[#1a1a1a] rounded-2xl border border-gray-800 overflow-hidden hover:border-[#32e4b6] transition-colors duration-300">
                   <div className="grid lg:grid-cols-2 gap-0">
                     <div className="relative h-80 lg:h-96">
                       <img 
                         src={project.image}
-                        alt={project.title}
+                        alt={project.name}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
@@ -95,7 +94,7 @@ const ProjectsSection = () => {
                     
                     <div className="p-8 lg:p-12 flex flex-col justify-center">
                       <h3
-                        className="mb-4"
+                        className="mb-8"
                         style={{
                           color: "#fff",
                           fontFamily: "Inter, sans-serif",
@@ -106,7 +105,7 @@ const ProjectsSection = () => {
                           textTransform: "uppercase"
                         }}
                       >
-                        {project.title}
+                        {project.name}
                       </h3>
                       <p
                         style={{
@@ -119,7 +118,7 @@ const ProjectsSection = () => {
                         }}
                         className="mb-8"
                       >
-                        {project.description}
+                        {project.projectSummary}
                       </p>
                       
                       <button
@@ -144,10 +143,10 @@ const ProjectsSection = () => {
                       </button>
                       
                       <div className="flex gap-4 flex-wrap">
-                        {project.tags.map((tag, tagIndex) => (
+                        {project.services.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}
-                            className="px-6 py-3 border border-gray-600 rounded-[1vw] text-white text-sm font-medium hover:border-[#32e4b6] transition-colors"
+                            className="px-6 py-3 border border-gray-600 rounded-[0.5vw] text-white text-sm font-medium hover:border-[#32e4b6] transition-colors"
                             style={{
                               color: "#fff",
                               fontFamily: "Inter, sans-serif",
@@ -164,7 +163,8 @@ const ProjectsSection = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </Link>
               </motion.div>
             );
           })}

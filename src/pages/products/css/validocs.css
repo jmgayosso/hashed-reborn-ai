@@ -1,0 +1,89 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0D0D0D; /* Main dark background */
+    color: #E5E5E5; /* Light gray text */
+}
+.valido_style_hashed-teal {
+    color: #00F0B5;
+}
+.valido_style_hashed-teal-bg {
+    background-color: #00F0B5;
+}
+.valido_style_hashed-teal-border {
+    border-color: #00F0B5;
+}
+.valido_style_hashed-card-bg {
+    background-color: #1A1A1A; /* Darker gray for cards */
+}
+.valido_style_hero-bg-custom {
+    background-color: #0D0D0D; /* Match body background */
+}
+.valido_style_section-bg-custom {
+    background-color: #121212; /* Slightly lighter dark for section emphasis if needed, or keep same as body */
+}
+.valido_style_cta-button {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.valido_style_cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 240, 181, 0.1), 0 4px 6px -2px rgba(0, 240, 181, 0.05);
+}
+.valido_style_hashed-teal-cta {
+    background-color: #00F0B5;
+    color: #0D0D0D !important; /* Dark text on teal button */
+    font-weight: 700;
+}
+.valido_style_hashed-teal-cta:hover {
+    color: #0D0D0D !important; /* Dark text on teal button */
+    background-color: #00d8a3; /* Slightly darker teal on hover */
+}
+.valido_style_feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.valido_style_feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0, 240, 181, 0.07), 0 5px 10px -5px rgba(0, 240, 181, 0.04);
+}
+.valido_style_logo-placeholder {
+    font-weight: 800; /* Bolder logo */
+    font-size: 1.85rem; /* Slightly larger logo */
+    color: #FFFFFF;
+}
+.valido_style_nav-link {
+    color: #E5E5E5;
+    font-weight: 500;
+}
+.valido_style_nav-link:hover {
+    color: #00F0B5;
+}
+.valido_style_form-container-custom {
+    background-color: #FFFFFF; /* Keep form on white bg for readability */
+    color: #1A1A1A; /* Dark text for form content */
+}
+input[type="text"], input[type="email"] {
+    color: #1A1A1A; /* Ensure input text is dark */
+    border-color: #D1D5DB; /* Standard gray border */
+}
+input[type="text"]:focus, input[type="email"]:focus {
+    border-color: #00F0B5;
+    box-shadow: 0 0 0 1px #00F0B5;
+}
+.valido_style_heading-text-main {
+    color: #FFFFFF;
+    font-weight: 800;
+}
+.valido_style_heading-text-sub {
+    color: #E5E5E5; /* Light gray for subheadings/body */
+}
+.valido_style_problem-icon-color {
+    color: #FF6B6B; /* A softer red for dark backgrounds */
+}
+h3 {
+    text-transform: none
+}
+.container {
+overflow: inherit 
+}
+.customrequesthover:hover {
+  color: white !important
+}
