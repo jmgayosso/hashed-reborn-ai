@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   // base: 'hashed-reborn-ai',
-  base: mode === 'development' ? '/' : '/hashed-reborn-ai/',
+  base: mode === 'development' ? '/' : '/',
   plugins: [
     react(),
     mode === 'development' &&
