@@ -175,7 +175,7 @@ const Contact = () => {
                     className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
                 </div>
-                <div>
+                {/* <div>
                   <label htmlFor="phone"
                     style={{
                       color: '#b3b3b3',
@@ -196,7 +196,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     className="bg-[#2a2a2a] border-gray-600 text-white placeholder-gray-500 rounded-xl h-10 font-inter focus:border-[#32e4b6] focus:ring-[#32e4b6]"
                   />
-                </div>
+                </div> */}
                 <div>
                   <label
                     style={{
