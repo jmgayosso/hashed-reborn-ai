@@ -80,7 +80,7 @@ const Hero = () => {
       />
 
       {/* Main content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-1 sm:pt-16">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div 
             className="max-w-5xl mx-auto"
@@ -93,53 +93,53 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 mb-8 text-sm font-medium text-[#32e4b6] bg-[#32e4b6]/10 border border-[#32e4b6]/20 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center px-3 py-1.5 mb-8 text-xs md:text-sm font-medium text-[#32e4b6] bg-[#32e4b6]/10 border border-[#32e4b6]/20 rounded-full backdrop-blur-sm"
             >
-              <span className="w-2 h-2 bg-[#32e4b6] rounded-full mr-2 animate-pulse"></span>
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#32e4b6] rounded-full mr-2 animate-pulse"></span>
               8 Years Building Digital Solutions
             </motion.div>
 
             {/* Main heading with staggered animation */}
             <div className="mb-8">
               <motion.h1 
-                className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-2 md:mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
               >
-                SOLVE OLD
+          SOLVE OLD
               </motion.h1>
               
               <motion.h1 
-                className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-2 md:mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
               >
-                PROBLEMS
+          PROBLEMS
               </motion.h1>
               
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="relative"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="relative"
               >
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6] relative">
-                  NEW WAYS
-                  <motion.div
-                    className="absolute -bottom-3 left-0 w-full h-2 bg-gradient-to-r from-[#32e4b6] to-transparent opacity-60"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 1, delay: 1 }}
-                  />
-                </h1>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6] relative">
+            NEW WAYS
+            <motion.div
+              className="absolute -bottom-3 left-0 w-full h-2 bg-gradient-to-r from-[#32e4b6] to-transparent opacity-60"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+            />
+          </h1>
               </motion.div>
             </div>
 
             {/* Description */}
             <motion.p 
-              className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-md md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -157,22 +157,22 @@ const Hero = () => {
               className="mb-16"
             >
               <Link to="/contact">
-                <motion.button 
-                  className="group relative inline-flex items-center gap-3 bg-[#32e4b6] text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#2dd4a7] hover:shadow-2xl hover:shadow-[#32e4b6]/25"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>START YOUR PROJECT</span>
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ArrowRight size={20} />
-                  </motion.div>
-                  
-                  {/* Button glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-[#32e4b6] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
-                </motion.button>
+          <motion.button 
+            className="group relative inline-flex items-center gap-3 bg-[#32e4b6] text-black px-8 py-2 md:py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#2dd4a7] hover:shadow-2xl hover:shadow-[#32e4b6]/25"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>START YOUR PROJECT</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ArrowRight size={20} />
+            </motion.div>
+            
+            {/* Button glow effect */}
+            <div className="absolute inset-0 rounded-full bg-[#32e4b6] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
+          </motion.button>
               </Link>
             </motion.div>
           </motion.div>
@@ -197,7 +197,7 @@ const Hero = () => {
             <ChevronDown size={20} />
           </motion.div>
         </motion.div>
-      </div>
+            </div>
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
