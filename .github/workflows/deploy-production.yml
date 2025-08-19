@@ -1,0 +1,60 @@
+# GitHub Actions workflow for automatic deployment to production server
+# This workflow builds the React/Vite project and deploys it via FTP
+name: Deploy to Production
+
+# Trigger: This workflow runs when code is pushed to the 'production' branch
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build-and-deploy:
+    # Use the latest Ubuntu runner for better performance and compatibility
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Download the source code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Step 2: Install Bun (JavaScript runtime and package manager)
+    # Bun is used because the project has bun.lockb file
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+
+    # Step 3: Install all project dependencies
+    # This will read package.json and install all required packages
+    - name: Install dependencies
+      run: bun install
+
+    # Step 4: Build the production-ready application
+    # Vite will create optimized files in the dist/ folder
+    - name: Build project
+      run: bun run build
+
+    # Step 5: Deploy the built files to the FTP server
+    # This uploads everything from dist/ to the production server
+    - name: Deploy to FTP server
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        # FTP server connection details (stored as GitHub Secrets for security)
+        server: ${{ secrets.FTP_HOST }}        # FTP server hostname or IP
+        username: ${{ secrets.FTP_USERNAME }}  # FTP username
+        password: ${{ secrets.FTP_PASSWORD }}  # FTP password
+        port: ${{ secrets.FTP_PORT }}          # FTP port (usually 21 or 22)
+        
+        # Local directory to upload (Vite build output)
+        local-dir: ./dist/
+        
+        # Remote directory on the server (root directory)
+        server-dir: ./
+        
+        # Files and folders to exclude from upload
+        exclude: |
+          **/.git*          # Git configuration files
+          **/.git*/**       # All Git directory contents
+          **/node_modules/** # Node.js dependencies (not needed on server)
+          **/.env           # Environment files (security)

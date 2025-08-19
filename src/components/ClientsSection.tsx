@@ -57,7 +57,7 @@ const ClientsSection = ({ clients: propClients }: ClientsSectionProps) => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#32e4b6] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#32e4b6] mb-4 text-center md:text-left">
             Clients.
           </h2>
         </motion.div>
