@@ -3,6 +3,8 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Lottie from 'lottie-react';
+import hashedAnimation from '../assets/animations/hashed_animation_lottie.json';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -125,15 +127,24 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="relative"
               >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6] relative">
-            NEW WAYS
-            <motion.div
-              className="absolute -bottom-3 left-0 w-full h-2 bg-gradient-to-r from-[#32e4b6] to-transparent opacity-60"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-            />
-          </h1>
+          <div className="flex items-start justify-center gap-1 sm:gap-2 md:gap-3">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6] relative">
+              NEW WAYS
+              <motion.div
+                className="absolute -bottom-3 left-0 w-full h-2 bg-gradient-to-r from-[#32e4b6] to-transparent opacity-60"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+              />
+            </h1>
+            <div className="w-10 sm:w-16 md:w-20 lg:w-24 -mt-2 sm:mt-0">
+              <Lottie
+                animationData={hashedAnimation}
+                loop={true}
+                className="w-full h-full"
+              />
+            </div>
+          </div>
               </motion.div>
             </div>
 
