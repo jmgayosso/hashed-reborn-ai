@@ -19,53 +19,47 @@ const Footer = () => {
     viewport={{ once: true, amount: 0.5 }}
     className="group cursor-pointer"
     >
-      <footer className="bg-black py-12">
+      <footer className="bg-black py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center mb-6 md:mb-0">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <Link to="/">
-                  <img src={HashedIcon} className="hashed-icon"/>
-                </Link>
-              </div>
-            </div>
+        <div className="flex flex-col items-center space-y-8 md:space-y-0 md:flex-row md:justify-between md:items-center">
+          <div className="w-full flex justify-center md:justify-start">
+            <Link to="/" className="inline-block">
+              <img src={HashedIcon} alt="Hashed Logo" className="hashed-icon w-24 md:w-auto"/>
+            </Link>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
-            <nav className="flex space-x-8">
-              <Link 
-                to="/" 
-                className={`nav-link ${isActive('/') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
-              >
-                Home
-              </Link>
-              <Link 
-                to="/about" 
-                className={`nav-link ${isActive('/about') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
-              >
-                About
-                </Link>
-              <Link 
-                to="/products" 
-                className={`nav-link ${isActive('/products') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
-                >
-                  Products
-              </Link>
-              <Link 
-                to="/projects" 
-                className={`nav-link ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
-              >
-                Projects
-              </Link>
-              <Link 
-                to="/contact" 
-                className={`nav-link ${isActive('/contact') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[17px] font-light leading-6 text-center`}
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
+          <nav className="w-full grid grid-cols-3 gap-4 place-items-center md:flex md:space-x-8">
+            <Link 
+              to="/" 
+              className={`nav-link ${isActive('/') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[15px] md:text-[17px] font-light leading-6 text-center w-full`}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className={`nav-link ${isActive('/about') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[15px] md:text-[17px] font-light leading-6 text-center w-full`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/products" 
+              className={`nav-link ${isActive('/products') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[15px] md:text-[17px] font-light leading-6 text-center w-full`}
+            >
+              Products
+            </Link>
+            <Link 
+              to="/projects" 
+              className={`nav-link ${isActive('/projects') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[15px] md:text-[17px] font-light leading-6 text-center w-full`}
+            >
+              Projects
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`nav-link ${isActive('/contact') ? 'text-[#32e4b6]' : 'text-[#b3b3b3]'} font-inter text-[15px] md:text-[17px] font-light leading-6 text-center w-full`}
+            >
+              Contact
+            </Link>
+          </nav>
         </div>
         
         <div className="border-t border-[#32e4b6] mt-8 pt-8">
