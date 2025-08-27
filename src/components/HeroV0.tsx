@@ -32,16 +32,17 @@ const HeroV0 = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative flex items-center justify-center gap-4"
+                className="relative flex flex-col sm:flex-row items-start justify-center gap-0"
               >
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-[#32e4b6]">
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-[#32e4b6] text-center sm:text-left">
                   NEW WAYS
                 </h1>
-                <div className="w-10 sm:w-16 md:w-20 lg:w-24 -mt-2 sm:mt-0">
+                <div className="w-12 sm:w-16 md:w-24 lg:w-28 self-start">
                   <Lottie
                     animationData={hashedAnimation}
                     loop={true}
-                    className="w-full h-full"
+                    className="w-full h-auto"
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
                 {/* <motion.div
