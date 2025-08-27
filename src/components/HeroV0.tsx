@@ -9,10 +9,10 @@ const HeroV0 = () => {
   return (
     <section id="home" className="min-h-screen relative overflow-hidden bg-black">
       {/* Main content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
+  <div className="relative z-10 min-h-screen flex flex-col items-center justify-start sm:justify-center pt-24 sm:pt-16 px-4 sm:px-6 lg:px-8">
+  <div className="w-full md:w-[70%] mx-auto text-center md:text-left">
           <motion.div 
-            className="max-w-5xl mx-auto"
+            className="w-full mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -20,29 +20,32 @@ const HeroV0 = () => {
             {/* Main heading */}
             <div className="mb-8">
               <motion.h1 
-                className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-0 md:mb-4 text-center"
+                className="text-4xl sm:text-4xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-0 md:mb-4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                SOLVE OLD PROBLEMS
+                <span>SOLVE OLD </span>
+                {/* break only on md to create 3 lines on md, hide on lg to make first line combined on large screens */}
+                <br className="hidden md:block lg:hidden" />
+                <span>PROBLEMS</span>
               </motion.h1>
               
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative flex flex-row items-start justify-center gap-0 md:gap-2 flex-nowrap"
+                className="relative flex flex-row md:flex-row items-start justify-center md:justify-start gap-2 flex-nowrap w-full md:w-auto"
               >
-                <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-[#32e4b6] text-left">
-                  NEW WAYS
+                <h1 className="text-4xl sm:text-4xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6]">
+                  <span className="inline md:block lg:inline">NEW WAYS</span>
                 </h1>
-                <div className="w-12 sm:w-20 md:w-28 lg:w-28 self-start ml-0">
+                <div className="w-8 sm:w-16 md:w-24 lg:w-28 self-start ml-2 -ml-4">
                   <Lottie
-                    animationData={hashedAnimation}
-                    loop={true}
-                    className="w-full h-auto"
-                    style={{ width: '100%', height: 'auto' }}
+                  animationData={hashedAnimation}
+                  loop={true}
+                  className="w-full h-auto"
+                  style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               </motion.div>
@@ -50,7 +53,7 @@ const HeroV0 = () => {
 
             {/* Description */}
             <motion.div 
-              className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-base md:text-lg lg:text-xl text-gray-300 mb-12 max-w-3xl mx-auto md:mx-0 leading-relaxed md:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -67,7 +70,7 @@ const HeroV0 = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="mb-16"
+              className="mb-16 flex justify-center md:mt-24"
             >
               <Link to="/contact">
             <button
