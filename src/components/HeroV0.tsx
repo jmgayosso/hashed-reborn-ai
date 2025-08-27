@@ -20,7 +20,7 @@ const HeroV0 = () => {
             {/* Main heading */}
             <div className="mb-8">
               <motion.h1 
-                className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-4"
+                className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-4 text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -32,12 +32,12 @@ const HeroV0 = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative flex flex-col sm:flex-row items-start justify-center gap-0"
+                className="relative flex flex-col sm:flex-row items-center sm:items-start justify-center gap-0"
               >
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-[#32e4b6] text-center sm:text-left">
+                <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-[#32e4b6] text-center sm:text-left">
                   NEW WAYS
                 </h1>
-                <div className="w-12 sm:w-16 md:w-24 lg:w-28 self-start">
+                <div className="w-8 sm:w-16 md:w-24 lg:w-28 self-center sm:self-start mt-2 sm:mt-0">
                   <Lottie
                     animationData={hashedAnimation}
                     loop={true}
@@ -45,14 +45,6 @@ const HeroV0 = () => {
                     style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
-                {/* <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-[#32e4b6]"
-                >
-                  <Sparkles size={48} className="md:w-16 md:h-16" />
-                </motion.div> */}
               </motion.div>
             </div>
 
