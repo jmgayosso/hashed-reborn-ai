@@ -1,6 +1,9 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ArrowWhitCurve from '@/assets/icons/arrow_with_curve.svg'
+import hashedAnimation from '../assets/animations/hashed_animation_lottie.json';
+import Lottie from 'lottie-react';
 
 const HeroV0 = () => {
   return (
@@ -34,14 +37,21 @@ const HeroV0 = () => {
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-[#32e4b6]">
                   NEW WAYS
                 </h1>
-                <motion.div
+                <div className="w-10 sm:w-16 md:w-20 lg:w-24 -mt-2 sm:mt-0">
+                  <Lottie
+                    animationData={hashedAnimation}
+                    loop={true}
+                    className="w-full h-full"
+                  />
+                </div>
+                {/* <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="text-[#32e4b6]"
                 >
                   <Sparkles size={48} className="md:w-16 md:h-16" />
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </div>
 
@@ -67,23 +77,25 @@ const HeroV0 = () => {
               className="mb-16"
             >
               <Link to="/contact">
-                <motion.button 
-                  className="group relative inline-flex items-center gap-3 bg-[#32e4b6] text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#2dd4a7] hover:shadow-2xl hover:shadow-[#32e4b6]/25"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>TELL US ABOUT YOUR IDEA</span>
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ArrowRight size={20} />
-                  </motion.div>
-                  
-                  {/* Button glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-[#32e4b6] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
-                </motion.button>
-              </Link>
+            <button
+              className="btn-primary inline-flex items-center gap-2 px-8 py-4"
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "15px",
+                fontWeight: 500,
+                lineHeight: "15px",
+                textAlign: "center",
+                textTransform: "uppercase"
+              }}
+            >
+              TELL US ABOUT YOUR IDEA
+              <img
+                src={ArrowWhitCurve}
+                alt="Arrow"
+                className="h-7 w-7"
+              />
+            </button>
+          </Link>
             </motion.div>
           </motion.div>
         </div>
