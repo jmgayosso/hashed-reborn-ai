@@ -20,7 +20,7 @@ const HeroV0 = () => {
             {/* Main heading */}
             <div className="mb-8">
               <motion.h1 
-                className="text-4xl sm:text-4xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-0 md:mb-4"
+                className="text-4xl sm:text-4xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-0 md:mb-4 mt-24 md:mt-10"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -40,7 +40,7 @@ const HeroV0 = () => {
                 <h1 className="text-4xl sm:text-4xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6]">
                   <span className="inline md:block lg:inline">NEW WAYS</span>
                 </h1>
-                <div className="w-8 sm:w-16 md:w-24 lg:w-28 self-start ml-2 -ml-4">
+                <div className="w-12 sm:w-16 md:w-24 lg:w-28 self-start  -ml-4">
                   <Lottie
                   animationData={hashedAnimation}
                   loop={true}
