@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react'
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
+import HeroV0 from '@/components/HeroV0';
 import ClientsSection from '@/components/ClientsSection';
 import WhyUsSection from '@/components/WhyUsSection';
 import ExecutionSection from '@/components/ExecutionSection';
@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
-      <Hero />
+      <HeroV0 />
       <ClientsSection />
       <WhyUsSection />
       <ExecutionSection />

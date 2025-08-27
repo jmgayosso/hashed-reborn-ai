@@ -1,18 +1,19 @@
 import { ProjectItem } from '@/interfaces'
 
-import polkadotDescription from '@/const/projectDescriptions/polkadot.md'
-import top3GlobalBank from '@/const/projectDescriptions/top3GlobalBank.md'
-import smartVaultsDescription from '@/const/projectDescriptions/smartVults.md'
-import hyphaDescription from '@/const/projectDescriptions/hypha.md'
-import sAndKDescription from '@/const/projectDescriptions/s&k.md'
-import bennyFiDescription from '@/const/projectDescriptions/bennyFi.md'
-import prxyDescription from '@/const/projectDescriptions/prxy.md'
-import lorem1 from '@/const/projectDescriptions/lorem.md'
-import lorem2 from '@/const/projectDescriptions/lorem.md'
-import lorem3 from '@/const/projectDescriptions/lorem.md'
-import lorem4 from '@/const/projectDescriptions/lorem.md'
-import lorem5 from '@/const/projectDescriptions/lorem.md'
-import lorem6 from '@/const/projectDescriptions/lorem.md'
+// Temporary placeholder descriptions until markdown files are properly configured
+const polkadotDescription = "Polkadot project description"
+const top3GlobalBank = "Top 3 Global Bank project description"
+const smartVaultsDescription = "Smart Vaults project description"
+const hyphaDescription = "Hypha project description"
+const sAndKDescription = "S&K project description"
+const bennyFiDescription = "BennyFi project description"
+const prxyDescription = "PRXY project description"
+const lorem1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+const lorem2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+const lorem3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+const lorem4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+const lorem5 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+const lorem6 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
 const projects: ProjectItem[] = [
    {
