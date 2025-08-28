@@ -16,17 +16,16 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50 border-b border-[#2a2a2a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50 border-[#2a2a2a]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mt-5">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
+            <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/">
-                <img src={HashedIcon} className="hashed-icon"/>
+              <img src={HashedIcon} className="hashed-icon" style={{ width: '130px', height: '130px' }} />
               </Link>
             </div>
-          </div>
+            </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

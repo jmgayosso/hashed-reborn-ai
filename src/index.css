@@ -86,7 +86,11 @@
 }
 
 .hashed-icon {
-  width: 100px !important;
+  /* allow sizing via inline styles or Tailwind utility classes
+     Avoid a forced width so different layouts (nav/footer) can set their own sizes */
+  width: auto;
+  height: auto;
+  max-width: none;
 }
 
 .hero-title-class {
