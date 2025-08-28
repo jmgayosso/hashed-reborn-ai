@@ -9,10 +9,10 @@ const HeroV0 = () => {
   return (
     <section id="home" className="min-h-screen relative overflow-hidden bg-black">
       {/* Main content */}
-  <div className="relative z-10 min-h-screen flex flex-col items-center justify-start sm:justify-center pt-24 sm:pt-16 px-4 sm:px-6 lg:px-8">
-  <div className="w-full md:w-[70%] mx-auto text-center md:text-left">
+  <div className="relative z-10 min-h-screen flex flex-col items-center justify-start sm:justify-center pt-24 lg:pt-0 sm:pt-16 md:mx-8">
+  <div className="max-w-7xl mx-auto text-center md:text-left">
           <motion.div 
-            className="w-full mx-auto"
+            className="max-w-8xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -20,7 +20,7 @@ const HeroV0 = () => {
             {/* Main heading */}
             <div className="mb-8">
               <motion.h1 
-                className="text-4xl sm:text-4xl md:text-8xl lg:text-9xl font-bold leading-tight text-white mb-0 md:mb-4 mt-24 md:mt-10"
+                className="text-4xl sm:text-4xl md:text-[110px] md:leading-[112px] lg:customClass font-bold leading-tight text-white mb-0 md:mb-4 mt-24 md:mt-10"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -37,7 +37,7 @@ const HeroV0 = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="relative flex flex-row md:flex-row items-start justify-center md:justify-start gap-2 flex-nowrap w-full md:w-auto"
               >
-                <h1 className="text-4xl sm:text-4xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#32e4b6]">
+                <h1 className="text-4xl sm:text-4xl md:text-[110px] md:leading-[112px] font-bold leading-tight text-[#32e4b6]">
                   <span className="inline md:block lg:inline">NEW WAYS</span>
                 </h1>
                 <div className="w-12 sm:w-16 md:w-24 lg:w-28 self-start  -ml-4">
@@ -53,15 +53,15 @@ const HeroV0 = () => {
 
             {/* Description */}
             <motion.div 
-              className="text-base md:text-lg lg:text-xl text-gray-300 mb-12 max-w-3xl mx-auto md:mx-0 leading-relaxed md:text-left"
+              className="text-base md:text-[17px] lg:text-[17px] text-[#b3b3b3] mb-12 max-w-3xl mx-auto md:mx-0 leading-relaxed md:text-left font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p>
-                With <span className="font-semibold text-white">8 years of experience</span> building 
-                tailored software used by thousands of users, our team can build the path to a{' '}
-                <span className="font-semibold text-white">more efficient, productive business.</span>
+              With <span className="font-bold">8 years of experience</span> building 
+              tailored software used by thousands of users, our team can build the path to a{' '}
+              <span className="font-bold">more efficient, productive business.</span>
               </p>
             </motion.div>
 
@@ -102,5 +102,6 @@ const HeroV0 = () => {
     </section>
   );
 };
+
 
 export default HeroV0;

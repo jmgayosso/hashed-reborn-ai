@@ -53,7 +53,7 @@
   }
   
   .btn-primary {
-    @apply bg-[#32e4b6] text-black px-6 py-3 rounded-full font-medium hover:bg-[#16B896] transition-colors;
+    @apply bg-[#32e4b6] text-black px-2 py-3 rounded-[20px] font-medium hover:bg-[#16B896] transition-colors;
   }
   
   .card-dark {
@@ -87,4 +87,14 @@
 
 .hashed-icon {
   width: 100px !important;
+}
+
+.hero-title-class {
+  color: #fff;
+  font-family: 'Inter, sans-serif';
+  font-size: 110px !important;
+  font-weight: 700;
+  line-height: 112px;
+  margin: 0px 0px 0px -5px;
+  text-align: left;
 }
