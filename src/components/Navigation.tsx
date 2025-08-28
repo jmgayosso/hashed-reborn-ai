@@ -22,7 +22,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/home">
+              <Link to="/">
                 <img src={HashedIcon} className="hashed-icon"/>
               </Link>
             </div>
@@ -32,10 +32,10 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-1">
               <Link 
-                to="/home" 
+                to="/" 
                 className={`font-inter uppercase transition-colors ${isActive('/') ? 'text-[#32e4b6]' : 'text-white'}`}
                 style={{
-                  color: isActive('/home') ? '#32e4b6' : '#fff',
+                  color: isActive('/') ? '#32e4b6' : '#fff',
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '15px',
                   fontWeight: 300,
