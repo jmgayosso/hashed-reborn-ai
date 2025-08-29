@@ -24,7 +24,8 @@ const ProjectDetail = () => {
     // Load markdown content if project exists and has projectDetails
     if (foundProject && foundProject.projectDetails && foundProject.projectDetails !== '') {
       // Since the path is relative, we'll try to load from the public folder
-      const markdownPath = foundProject.projectDetails.replace('./projectDescriptions/', '/src/const/projectDescriptions/');
+      // const markdownPath = foundProject.projectDetails.replace('./projectDescriptions/', '/src/const/projectDescriptions/');
+      const markdownPath = foundProject.projectDetails
       console.log('Loading markdown from:', markdownPath);
       
       // For now, we'll use a simple fetch approach
