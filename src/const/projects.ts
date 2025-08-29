@@ -1,13 +1,13 @@
 import { ProjectItem } from '@/interfaces'
 
 // Import markdown files directly
-import polkadotDescription from './projectDescriptions/polkadot.md?raw'
-import top3GlobalBank from './projectDescriptions/top3GlobalBank.md?raw'
-import smartVaultsDescription from './projectDescriptions/smartVaults.md?raw'
-import hyphaDescription from './projectDescriptions/hypha.md?raw'
-import sAndKDescription from './projectDescriptions/s&K.md?raw'
-import bennyFiDescription from './projectDescriptions/bennyFi.md?raw'
-import prxyDescription from './projectDescriptions/prxy.md?raw'
+import polkadotDescription from './projectDescriptions/polkadot.md'
+import top3GlobalBank from './projectDescriptions/top3GlobalBank.md'
+import smartVaultsDescription from './projectDescriptions/smartVaults.md'
+import hyphaDescription from './projectDescriptions/hypha.md'
+import sAndKDescription from './projectDescriptions/s&K.md'
+import bennyFiDescription from './projectDescriptions/bennyFi.md'
+import prxyDescription from './projectDescriptions/prxy.md'
 
 const projects: ProjectItem[] = [
    {
