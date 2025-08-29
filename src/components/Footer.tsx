@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-8 md:space-y-0 md:flex-row md:justify-between md:items-center">
           <div className="w-full flex justify-center md:justify-start">
             <Link to="/" className="inline-block">
-              <img src={HashedIcon} alt="Hashed Logo" className="hashed-icon w-24 md:w-auto"/>
+              <img src={HashedIcon} alt="Hashed Logo" className="hashed-icon" style={{ width: '130px', height: '130px' }}/>
             </Link>
           </div>
           

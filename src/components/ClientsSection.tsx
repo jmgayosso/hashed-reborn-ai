@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import bitcashImg from '@/assets/clients/bitcash.svg';
-import prxyImg from '@/assets/clients/citi.svg';
+import prxyImg from '@/assets/clients/citi2.svg';
 import citiImg from '@/assets/clients/credit.svg';
 import spsImg from '@/assets/clients/diamon.svg';
 import hyphoImg from '@/assets/clients/hancock.svg';

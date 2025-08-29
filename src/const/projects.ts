@@ -1,13 +1,13 @@
 import { ProjectItem } from '@/interfaces'
 
 // Temporary placeholder descriptions until markdown files are properly configured
-const polkadotDescription = "Polkadot project description"
-const top3GlobalBank = "Top 3 Global Bank project description"
-const smartVaultsDescription = "Smart Vaults project description"
-const hyphaDescription = "Hypha project description"
-const sAndKDescription = "S&K project description"
-const bennyFiDescription = "BennyFi project description"
-const prxyDescription = "PRXY project description"
+const polkadotDescription = "./projectDescriptions/polkadot.md"
+const top3GlobalBank = "./projectDescriptions/top3GlobalBank.md"
+const smartVaultsDescription = "./projectDescriptions/smartVaults.md"
+const hyphaDescription = "./projectDescriptions/hypha.md"
+const sAndKDescription = "./projectDescriptions/s&K.md"
+const bennyFiDescription = "./projectDescriptions/bennyFi.md"
+const prxyDescription = "./projectDescriptions/prxy.md"
 const lorem1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 const lorem2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 const lorem3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -19,7 +19,7 @@ const projects: ProjectItem[] = [
    {
      id: 2,
      name: 'Polkadot',
-     image: 'images/projects/polkadotProj.jpg',
+     image: '/images/projects/polkadotProj.jpg',
      projectSummary: 'Using LLMs as onboarding and governance tools',
      client: 'Polkadot-Polkassembly',
      projectDetails: polkadotDescription,
@@ -29,7 +29,7 @@ const projects: ProjectItem[] = [
    {
      id: 3,
      name: 'Top 3 Global Bank',
-     image: 'images/projects/top3GlobalProj.jpg',
+     image: '/images/projects/top3GlobalProj.jpg',
      projectSummary: 'Making sense of chaos with AI',
      client: '',
      projectDetails: top3GlobalBank,
@@ -39,7 +39,7 @@ const projects: ProjectItem[] = [
    {
      id: 4,
      name: 'Smart Vaults',
-     image: 'images/projects/smartVaultsProj.jpg',
+     image: '/images/projects/smartVaultsProj.jpg',
      projectSummary: 'Smart Bitcoin wallet wtih taproot miniscript',
      client: '',
      projectDetails: smartVaultsDescription,
@@ -49,7 +49,7 @@ const projects: ProjectItem[] = [
    {
      id: 5,
      name: 'Hypha',
-     image: 'images/projects/hyphaProj.jpg',
+     image: '/images/projects/hyphaProj.jpg',
      projectSummary: 'DAO platform for regenerative projects',
      client: 'Hypha',
      projectDetails: hyphaDescription,
@@ -59,7 +59,7 @@ const projects: ProjectItem[] = [
    {
      id: 6,
      name: 'S&K',
-     image: 'images/projects/s&kProj.jpg',
+     image: '/images/projects/s&kProj.jpg',
      projectSummary: 'Modern investment due diligence for brokers.',
      client: "Snyder Kearney's",
      projectDetails: sAndKDescription,
@@ -69,7 +69,7 @@ const projects: ProjectItem[] = [
    {
      id: 7,
      name: 'BennyFi',
-     image: 'images/projects/bennyProj.jpg',
+     image: '/images/projects/bennyProj.jpg',
      projectSummary: 'Pledge the Yield, not the Principal',
      client: 'BennyFi',
      projectDetails: bennyFiDescription,
@@ -79,73 +79,73 @@ const projects: ProjectItem[] = [
    {
      id: 8,
      name: 'PRXY',
-     image: 'images/projects/prxyProj.jpg',
+     image: '/images/projects/prxyProj.jpg',
      projectSummary: 'The best solution for EB-5 compliance',
      client: 'PRXY Co',
      projectDetails: prxyDescription,
      completedDate: '',
      services: ['Blockchain', 'Vue'],
    },
-   {
-     id: 9,
-     name: 'Software Solution',
-     image: 'images/projects/softwareSolutionProj.jpeg',
-     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-     client: 'Bryan Hennesy',
-     projectDetails: lorem1,
-     completedDate: '02/03/2023',
-     services: ['Development'],
-   },
-   {
-     id: 10,
-     name: 'Digital Marketing',
-     image: 'images/projects/digitalMarketingProj.jpeg',
-     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-     client: 'Digital Capita',
-     projectDetails: lorem2,
-     completedDate: '08/10/2022',
-     services: ['Development'],
-   },
-   {
-     id: 11,
-     name: 'Marketing Strategy',
-     image: 'images/projects/marketingStrategyProj.jpeg',
-     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-     client: 'Mutil-Digital Capita',
-     projectDetails: lorem3,
-     completedDate: '06/06/2022',
-     services: ['Development'],
-   },
-   {
-     id: 12,
-     name: 'Website Redesign',
-     image: 'images/projects/websiteRedesignProj.jpeg',
-     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-     client: 'Will Walters',
-     projectDetails: lorem4,
-     completedDate: '10/01/2021',
-     services: ['Development'],
-   },
-   {
-     id: 13,
-     name: 'Brand Identity',
-     image: 'images/projects/brandIdentityProj.jpeg',
-     projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-     client: 'Bryan Hennesy',
-     projectDetails: lorem5,
-     completedDate: '12/08/2021',
-     services: ['Development'],
-   },
-   {
-     id: 14,
-     name: 'Development',
-     image: 'images/projects/developmentProj.jpeg',
-     projectSummary: 'The best solution for EB-5 compliance',
-     client: 'Will Walters',
-     projectDetails: lorem6,
-     completedDate: '02/26/2023',
-     services: ['Blockchain', 'Vue'],
-   }
+  //  {
+  //    id: 9,
+  //    name: 'Software Solution',
+  //    image: '/images/projects/softwareSolutionProj.jpeg',
+  //    projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //    client: 'Bryan Hennesy',
+  //    projectDetails: lorem1,
+  //    completedDate: '02/03/2023',
+  //    services: ['Development'],
+  //  },
+  //  {
+  //    id: 10,
+  //    name: 'Digital Marketing',
+  //    image: '/images/projects/digitalMarketingProj.jpeg',
+  //    projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //    client: 'Digital Capita',
+  //    projectDetails: lorem2,
+  //    completedDate: '08/10/2022',
+  //    services: ['Development'],
+  //  },
+  //  {
+  //    id: 11,
+  //    name: 'Marketing Strategy',
+  //    image: '/images/projects/marketingStrategyProj.jpeg',
+  //    projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //    client: 'Mutil-Digital Capita',
+  //    projectDetails: lorem3,
+  //    completedDate: '06/06/2022',
+  //    services: ['Development'],
+  //  },
+  //  {
+  //    id: 12,
+  //    name: 'Website Redesign',
+  //    image: '/images/projects/websiteRedesignProj.jpeg',
+  //    projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //    client: 'Will Walters',
+  //    projectDetails: lorem4,
+  //    completedDate: '10/01/2021',
+  //    services: ['Development'],
+  //  },
+  //  {
+  //    id: 13,
+  //    name: 'Brand Identity',
+  //    image: '/images/projects/brandIdentityProj.jpeg',
+  //    projectSummary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //    client: 'Bryan Hennesy',
+  //    projectDetails: lorem5,
+  //    completedDate: '12/08/2021',
+  //    services: ['Development'],
+  //  },
+  //  {
+  //    id: 14,
+  //    name: 'Development',
+  //    image: '/images/projects/developmentProj.jpeg',
+  //    projectSummary: 'The best solution for EB-5 compliance',
+  //    client: 'Will Walters',
+  //    projectDetails: lorem6,
+  //    completedDate: '02/26/2023',
+  //    services: ['Blockchain', 'Vue'],
+  //  }
  ] 
 
 export default projects
