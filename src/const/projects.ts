@@ -5,7 +5,7 @@ import polkadotDescription from './projectDescriptions/polkadot.md'
 import top3GlobalBank from './projectDescriptions/top3GlobalBank.md'
 import smartVaultsDescription from './projectDescriptions/smartVaults.md'
 import hyphaDescription from './projectDescriptions/hypha.md'
-import sAndKDescription from './projectDescriptions/s&K.md'
+import sAndKDescription from './projectDescriptions/s&k.md'
 import bennyFiDescription from './projectDescriptions/bennyFi.md'
 import prxyDescription from './projectDescriptions/prxy.md'
 
