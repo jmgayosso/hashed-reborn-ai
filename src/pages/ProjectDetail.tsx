@@ -21,18 +21,10 @@ const ProjectDetail = () => {
     const foundProject = ProjectList.find(p => p.id === parseInt(id || '0'));
     setProject(foundProject || null);
     
-    // Load markdown content if project exists and has projectDetails
-    if (foundProject && foundProject.projectDetails && foundProject.projectDetails !== '') {
-      // Since the path is relative, we'll try to load from the public folder
-      const markdownPath = foundProject.projectDetails.replace('./projectDescriptions/', '/src/const/projectDescriptions/');
-      console.log('Markdown path:', markdownPath);
-
-      // For now, we'll use a simple fetch approach
-      // In a real app, you might want to import the markdown files directly
-      fetch(markdownPath)
-        .then(response => response.text())
-        .then(text => setMarkdownContent(text))
-        .catch(() => setMarkdownContent('Content not available'));
+    // Set markdown content directly from the imported content
+    if (foundProject && foundProject.projectDetails) {
+      // The projectDetails now contains the actual markdown content
+      setMarkdownContent(foundProject.projectDetails);
     }
   }, [id]);
 

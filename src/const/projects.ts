@@ -1,19 +1,13 @@
 import { ProjectItem } from '@/interfaces'
 
-// Temporary placeholder descriptions until markdown files are properly configured
-const polkadotDescription = "./projectDescriptions/polkadot.md"
-const top3GlobalBank = "./projectDescriptions/top3GlobalBank.md"
-const smartVaultsDescription = "./projectDescriptions/smartVaults.md"
-const hyphaDescription = "./projectDescriptions/hypha.md"
-const sAndKDescription = "./projectDescriptions/s&K.md"
-const bennyFiDescription = "./projectDescriptions/bennyFi.md"
-const prxyDescription = "./projectDescriptions/prxy.md"
-const lorem1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-const lorem2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-const lorem3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-const lorem4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-const lorem5 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-const lorem6 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+// Import markdown files directly
+import polkadotDescription from './projectDescriptions/polkadot.md?raw'
+import top3GlobalBank from './projectDescriptions/top3GlobalBank.md?raw'
+import smartVaultsDescription from './projectDescriptions/smartVaults.md?raw'
+import hyphaDescription from './projectDescriptions/hypha.md?raw'
+import sAndKDescription from './projectDescriptions/s&K.md?raw'
+import bennyFiDescription from './projectDescriptions/bennyFi.md?raw'
+import prxyDescription from './projectDescriptions/prxy.md?raw'
 
 const projects: ProjectItem[] = [
    {
