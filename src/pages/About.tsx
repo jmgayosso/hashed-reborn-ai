@@ -1,77 +1,71 @@
-
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import AchievementsCarousel from '@/components/AchievementsCarousel';
 import ClientsSection from '@/components/ClientsSection';
 import CTASection from '@/components/CTASection';
-import hashedTeamImage from '../assets/images/hashedTeam.jpeg'; 
-import { useEffect } from 'react'
+import hashedTeamImage from '../assets/images/hashedTeam.jpeg';
+import { useEffect } from 'react';
 
 const About = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  }, []);
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, []);
 
-  return (
-    <div className="min-h-screen bg-black">
-      <Navigation />
-      <main className="pt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          {/* About Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 border-b border-[#32e4b6] pb-24">
-            {/* Left Side - Title and Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col justify-center"
-            >
-              <h1 className="text-8xl md:text-9xl font-bold text-white mb-8 font-inter">
-                ABOUT
-              </h1>
-              <p
-                className="font-inter"
-                style={{
-                  color: '#b3b3b3',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '17px',
-                  fontWeight: 300,
-                  lineHeight: '24px',
-                  textAlign: 'left',
-                }}
-              >
-                We are a team of experienced builders committed to our craft and
-                the success of our partners. We only work with exceptional
-                teams and help them build their vision.
-              </p>
-            </motion.div>
+    return (
+        <div className="min-h-screen bg-black">
+            <Navigation />
+            <main className="pt-24 pb-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+                    {/* About Section */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 border-b border-[#32e4b6] pb-24">
+                        {/* Left Side - Title and Text */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="flex flex-col justify-center"
+                        >
+                            <h1 className="text-8xl md:text-9xl font-bold text-white mb-8 font-inter">
+                                ABOUT
+                            </h1>
+                            <p
+                                className="font-inter"
+                                style={{
+                                    color: '#b3b3b3',
+                                    fontFamily: 'Inter, sans-serif',
+                                    fontSize: '17px',
+                                    fontWeight: 300,
+                                    lineHeight: '24px',
+                                    textAlign: 'left',
+                                }}
+                            >
+                                We are a team of experienced builders committed
+                                to our craft and the success of our partners. We
+                                only work with exceptional teams and help them
+                                build their vision.
+                            </p>
+                        </motion.div>
 
-            {/* Right Side - Team Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center justify-center"
-            >
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden">
-                <img 
-                  src={hashedTeamImage}
-                  alt="Hashed Team"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-          </div>
+                        {/* Right Side - Team Image */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="flex items-center justify-center"
+                        >
+                            <div className="relative w-full h-96 rounded-2xl overflow-hidden">
+                                <img
+                                    src={hashedTeamImage}
+                                    alt="Hashed Team"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </motion.div>
+                    </div>
 
-          {/* Achievements Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mb-5"
-            > */}
+                    {/* Achievements Section */}
+                    {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <motion.div
               key={2}
               initial={{ opacity: 0, y: 20 }}
@@ -134,16 +128,16 @@ const About = () => {
             >
               <AchievementsCarousel />
             </motion.div>
-          </div>
-          <div className="mt-24">
-            <ClientsSection />
-          </div>
-          <CTASection />
+          </div> */}
+                    <div className="mt-24">
+                        <ClientsSection />
+                    </div>
+                    <CTASection />
+                </div>
+            </main>
+            <Footer />
         </div>
-      </main>
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default About;
