@@ -45,7 +45,7 @@ const HeroV0 = () => {
                                         NEW WAYS
                                     </span>
                                 </h1>
-                                <div className="w-12 sm:w-16 md:w-24 lg:w-28 self-start  -mr-4">
+                                <div className="w-12 sm:w-16 md:w-24 lg:w-28 self-start  -mr-6">
                                     <Lottie
                                         animationData={hashedAnimation}
                                         loop={true}
